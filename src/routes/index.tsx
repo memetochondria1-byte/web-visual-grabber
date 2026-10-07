@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, BookOpenText, GraduationCap, HardDrive, Languages, Linkedin, Lock, PenLine, Plus, Sparkles, Target } from "lucide-react";
+import { ArrowRight, GraduationCap, HardDrive, Languages, Linkedin, Lock, PenLine, Plus, Sparkles, Target } from "lucide-react";
 import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
@@ -318,10 +318,6 @@ function DownloadPage() {
             <p>© 2026 Protiva AI. All rights reserved.</p>
             <p>Made with care in Bangladesh.</p>
           </div>
-          <p className="mt-6 text-center text-[11px] text-muted-foreground/70">
-            <BookOpenText className="mr-1 inline h-3 w-3" aria-hidden="true" />
-            Made by Abdullah Al Rafi Mahmud
-          </p>
         </div>
       </footer>
     </div>
