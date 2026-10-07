@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - APK download URL and release info live only in src/config/app.ts (APP_CONFIG) — one place to update per release.
+- App showcase pictures use CDN asset pointers and the shared carousel controls so uploads stay outside the repository and browsing stays consistent.
