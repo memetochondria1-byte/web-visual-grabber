@@ -244,18 +244,65 @@ function DownloadPage() {
               <Logo />
               <p className="mt-3 text-sm text-muted-foreground">Read deeper. Think clearer.</p>
             </div>
-            <ul className="grid grid-cols-3 gap-x-8 gap-y-3 text-sm text-muted-foreground">
+            <div className="grid gap-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ["Web App", LINKS.webApp],
-                ["Features", LINKS.features],
-                ["Documentation", LINKS.docs],
-                ["Privacy", LINKS.privacy],
-                ["Terms", LINKS.terms],
-                ["Download", "#download"],
-              ].map(([l, h]) => (
-                <li key={l}><a className="transition-colors hover:text-foreground" href={h}>{l}</a></li>
+                {
+                  title: "Product",
+                  links: [
+                    ["All features", "https://protiva.me/features"],
+                    ["Library", "https://protiva.me/feature/library"],
+                    ["Highlights & notes", "https://protiva.me/feature/highlights-notes"],
+                    ["Study mode", "https://protiva.me/feature/study-mode"],
+                    ["Export & share", "https://protiva.me/feature/export-share"],
+                    ["Pricing", "https://protiva.me/pricing"],
+                  ],
+                },
+                {
+                  title: "Resources",
+                  links: [
+                    ["Documentation", "https://protiva.me/docs"],
+                    ["Blog", "https://protiva.me/blog"],
+                    ["Founder", "https://protiva.me/founder"],
+                    ["Team", "https://protiva.me/team"],
+                    ["Privacy", "https://protiva.me/privacy"],
+                    ["Terms", "https://protiva.me/terms"],
+                    ["Contact", "https://protiva.me/contact"],
+                  ],
+                },
+                {
+                  title: "Solutions",
+                  links: [
+                    ["Study tools for PDFs", "https://protiva.me/solutions/study-tools"],
+                    ["PDF reading & annotation", "https://protiva.me/solutions/reading-tools"],
+                    ["Nova — AI tutor for PDFs", "https://protiva.me/solutions/ai-tutor"],
+                    ["What is Protiva?", "https://protiva.me/blog/what-is-protiva"],
+                    ["Why students struggle with PDFs", "https://protiva.me/blog/why-students-struggle"],
+                    ["Protiva vs. other readers", "https://protiva.me/blog/protiva-vs-other-readers"],
+                  ],
+                },
+                {
+                  title: "Use cases",
+                  links: [
+                    ["Students", "https://protiva.me/use-cases/students"],
+                    ["Researchers", "https://protiva.me/use-cases/researchers"],
+                    ["Language learners", "https://protiva.me/use-cases/language-learners"],
+                    ["Exam prep", "https://protiva.me/use-cases/exam-prep"],
+                    ["Offline reading", "https://protiva.me/use-cases/offline-reading"],
+                  ],
+                },
+              ].map((group) => (
+                <div key={group.title}>
+                  <h3 className="font-medium text-foreground">{group.title}</h3>
+                  <ul className="mt-4 space-y-2.5 text-muted-foreground">
+                    {group.links.map(([label, href]) => (
+                      <li key={label}>
+                        <a className="transition-colors hover:text-foreground" href={href}>{label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
           <div className="mt-10 flex flex-col gap-2 border-t pt-6 text-xs text-muted-foreground sm:flex-row sm:justify-between">
             <p>© 2026 Protiva AI. All rights reserved.</p>
