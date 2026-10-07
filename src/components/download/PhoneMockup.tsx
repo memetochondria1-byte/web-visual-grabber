@@ -3,7 +3,7 @@ import { LogoMark } from "./Logo";
 
 export function PhoneMockup() {
   return (
-    <div className="relative mx-auto w-[280px] sm:w-[300px]">
+    <div className="relative mx-auto w-[280px] text-left sm:w-[300px]">
       <div className="animate-float">
         <div className="rounded-[2.6rem] bg-device p-2.5 shadow-device">
           <div className="relative overflow-hidden rounded-[2.1rem] bg-background">
@@ -17,7 +17,7 @@ export function PhoneMockup() {
             <div className="flex items-center gap-2 border-b px-4 py-2.5">
               <LogoMark className="h-4 w-4" />
               <span className="truncate text-[12px] font-medium">Thermodynamics — Ch. 4.pdf</span>
-              <span className="ml-auto font-mono text-[10px] text-muted-foreground">p. 42</span>
+              <span className="ml-auto shrink-0 whitespace-nowrap font-mono text-[10px] text-muted-foreground">p. 42</span>
             </div>
             {/* page */}
             <div className="space-y-2 px-5 pt-4 pb-3">
