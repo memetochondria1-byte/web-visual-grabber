@@ -1,3 +1,3 @@
 # Tasks
-- [ ] Add all nine uploaded pictures to the download page.
-- [ ] Check and resolve the website not showing.
+- [x] Add all nine uploaded pictures to the download page.
+- [x] Check website visibility: the page opens successfully with no browser errors; no website failure reproduced.
