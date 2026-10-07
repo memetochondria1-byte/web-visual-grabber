@@ -73,11 +73,6 @@ function DownloadPage() {
       <main>
         {/* HERO */}
         <section className="mx-auto max-w-6xl px-5 pt-14 pb-16 text-center sm:pt-24">
-          <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent-soft px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-foreground">
-              <ShieldCheck className="h-3.5 w-3.5 text-accent" aria-hidden="true" /> Official Android App
-            </span>
-          </div>
           <h1 className="animate-fade-up mx-auto mt-6 max-w-3xl text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.035em] [animation-delay:80ms] sm:text-7xl">
             Protiva AI, <span className="text-accent">now on Android.</span>
           </h1>
