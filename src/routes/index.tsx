@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, BookOpenText, GraduationCap, HardDrive, Languages, Lock, PenLine, Plus, ShieldCheck, Sparkles, Target } from "lucide-react";
+import { ArrowRight, BookOpenText, GraduationCap, HardDrive, Languages, Linkedin, Lock, PenLine, Plus, Sparkles, Target } from "lucide-react";
 import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
@@ -243,6 +243,16 @@ function DownloadPage() {
             <div>
               <Logo />
               <p className="mt-3 text-sm text-muted-foreground">Read deeper. Think clearer.</p>
+              <a
+                href="https://www.linkedin.com/company/protiva-ai"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Protiva AI on LinkedIn"
+                className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Linkedin className="h-4 w-4" aria-hidden="true" />
+                LinkedIn
+              </a>
             </div>
             <div className="grid gap-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
               {[
