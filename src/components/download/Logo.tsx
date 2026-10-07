@@ -14,7 +14,7 @@ export function LogoMark({ className = "h-7 w-7" }: { className?: string }) {
 export function Logo() {
   return (
     <span className="flex items-center gap-2.5 text-foreground">
-      <LogoMark className="h-7 w-7 object-contain brightness-0" />
+      <LogoMark className="h-7 w-7 object-contain" />
       <span className="text-[17px] font-semibold tracking-tight text-foreground">Protiva</span>
     </span>
   );
