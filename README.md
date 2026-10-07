@@ -1,18 +1,11 @@
-# Welcome to your Lovable project
+# Protiva AI — Android download site
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+The public download page for Protiva AI on Android: feature overview, install
+steps, FAQ, and the APK download.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
 git clone <this-repository-url>
@@ -20,6 +13,17 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+Other scripts: `npm run build`, `npm run preview`, `npm run lint`, `npm run test`.
+
+## Where things live
+
+- `src/routes/index.tsx` — the page itself.
+- `src/components/download/` — nav, download button, app pictures, logo.
+- `src/config/app.ts` — APK link, version, file size, release date, and the
+  external links. Update this file for every release; nothing else hardcodes them.
+- `public/downloads/` — drop the APK here as `protiva-ai.apk`.
+- `src/assets/` — the app screenshots shown in the gallery.
 
 ## Built with
 
