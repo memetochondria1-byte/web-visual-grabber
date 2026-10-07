@@ -1,20 +1,11 @@
-# Pixel Perfect Screenshot
+# Protiva AI — Android download site
 
-Implement exactly the screenshot and nothing else
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c23bf0c6-98ca-440b-9104-5b51f249d4ff).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+The public download page for Protiva AI on Android: feature overview, install
+steps, FAQ, and the APK download.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
 git clone <this-repository-url>
@@ -22,3 +13,21 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+Other scripts: `npm run build`, `npm run preview`, `npm run lint`, `npm run test`.
+
+## Where things live
+
+- `src/routes/index.tsx` — the page itself.
+- `src/components/download/` — nav, download button, app pictures, logo.
+- `src/config/app.ts` — APK link, version, file size, release date, and the
+  external links. Update this file for every release; nothing else hardcodes them.
+- `public/downloads/` — drop the APK here as `protiva-ai.apk`.
+- `src/assets/` — the app screenshots shown in the gallery.
+
+## Built with
+
+- TanStack Start
+- TypeScript
+- React
+- Tailwind CSS
