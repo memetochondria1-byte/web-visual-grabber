@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- APK download URL and release info live only in src/config/app.ts (APP_CONFIG) — one place to update per release.
