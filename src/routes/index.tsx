@@ -3,7 +3,7 @@ import { ArrowRight, BookOpenText, GraduationCap, HardDrive, Languages, Lock, Pe
 import { APP_CONFIG, LINKS } from "@/config/app";
 import { Navbar } from "@/components/download/Navbar";
 import { DownloadButton } from "@/components/download/DownloadButton";
-import { PhoneMockup } from "@/components/download/PhoneMockup";
+import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
@@ -103,7 +103,7 @@ function DownloadPage() {
           </p>
 
           <div className="animate-fade-up mt-16 [animation-delay:380ms]">
-            <PhoneMockup />
+            <ScreenshotGallery />
           </div>
         </section>
 
