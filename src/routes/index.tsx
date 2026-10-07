@@ -77,7 +77,7 @@ function DownloadPage() {
             Protiva AI, <span className="text-accent">now on Android.</span>
           </h1>
           <p className="animate-fade-up mx-auto mt-6 max-w-xl text-lg text-foreground/80 [animation-delay:160ms] sm:text-xl">
-            Your PDFs. Your notes. Your AI study workspace — wherever you are.
+            Your PDFs. Your notes. Your AI study workspace.
           </p>
           <p className="animate-fade-up mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-muted-foreground [animation-delay:200ms]">
             Read, annotate, study and understand your documents with Protiva AI. Download the official Android app and take your workspace with you.
