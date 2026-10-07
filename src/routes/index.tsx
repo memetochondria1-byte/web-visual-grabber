@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, BookOpenText, GraduationCap, HardDrive, Languages, Lock, PenLine, Plus, ShieldCheck, Sparkles, Target } from "lucide-react";
 import { APP_CONFIG, LINKS } from "@/config/app";
+import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
 import { DownloadButton } from "@/components/download/DownloadButton";
 import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
@@ -143,19 +144,35 @@ function DownloadPage() {
                 <DownloadButton label="Download Protiva for Android" size="lg" className="mt-8 w-full sm:w-auto" />
                 <p className="mt-3 font-mono text-xs text-muted-foreground">APK · Official release</p>
               </div>
-              <dl className="divide-y rounded-xl border bg-background font-mono text-sm">
-                {[
-                  ["Version", APP_CONFIG.version],
-                  ["Updated", APP_CONFIG.releaseDate],
-                  ["File size", APP_CONFIG.fileSize],
-                  ["Platform", "Android"],
-                ].map(([k, v]) => (
-                  <div key={k} className="flex items-center justify-between px-5 py-3.5">
-                    <dt className="text-muted-foreground">{k}</dt>
-                    <dd className="font-medium">{v}</dd>
+              <div className="flex flex-col gap-4">
+                <dl className="divide-y rounded-xl border bg-background font-mono text-sm">
+                  {[
+                    ["Version", APP_CONFIG.version],
+                    ["Updated", APP_CONFIG.releaseDate],
+                    ["File size", APP_CONFIG.fileSize],
+                    ["Platform", "Android"],
+                  ].map(([k, v]) => (
+                    <div key={k} className="flex items-center justify-between px-5 py-3.5">
+                      <dt className="text-muted-foreground">{k}</dt>
+                      <dd className="font-medium">{v}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <div className="flex items-center gap-4 rounded-xl border bg-background p-4">
+                  <img
+                    src={protivaQr}
+                    alt="QR code that opens the Protiva download page"
+                    className="h-24 w-24 shrink-0 rounded-lg border"
+                    loading="lazy"
+                  />
+                  <div>
+                    <p className="font-medium">Scan to install</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      Point your phone's camera at the code to open this download page on Android.
+                    </p>
                   </div>
-                ))}
-              </dl>
+                </div>
+              </div>
             </div>
           </div>
         </section>
