@@ -32,15 +32,39 @@ const pictures = [
 const explanationCards = [
   {
     title: "PDF Annotations",
-    description: "Read, mark, and draw right on any page of your PDF.",
+    description: "Read, mark, highlight, and draw directly on any page of your PDF.",
   },
   {
     title: "Your Study Space",
-    description: "PDFs, Nova AI, and text extraction, all in one place.",
+    description: "Keep your PDFs, Nova AI, and text extraction together in one focused workspace.",
   },
   {
     title: "Pick up where you left off",
-    description: "Sign in once and your workspace follows you on every device.",
+    description: "Sign in once and access your study workspace across all your devices.",
+  },
+  {
+    title: "Protiva Pro",
+    description: "Unlock Pro features and keep your account and library connected.",
+  },
+  {
+    title: "Continue Reading",
+    description: "Jump back into your PDFs and continue reading from where you stopped.",
+  },
+  {
+    title: "Live Study Rooms",
+    description: "Study together with others in shared live rooms.",
+  },
+  {
+    title: "Meet Nova",
+    description: "Use Nova AI to understand your documents and get help while studying.",
+  },
+  {
+    title: "Nova Conversations",
+    description: "Ask Nova questions and explore your documents through AI conversations.",
+  },
+  {
+    title: "Share Conversations",
+    description: "Share useful Nova conversations with others using a link or QR code.",
   },
 ];
 
@@ -93,7 +117,7 @@ export function ScreenshotGallery() {
               decoding="async"
               className="aspect-[768/1366] w-full rounded-lg object-contain"
             />
-            {index < explanationCards.length && (
+            {explanationCards[index] && (
               <div
                 className={`mt-4 motion-reduce:opacity-100 motion-reduce:translate-y-0 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
