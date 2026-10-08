@@ -16,6 +16,11 @@ import rooms from "@/assets/06-live-study-rooms.png";
 import nova from "@/assets/07-meet-nova.png";
 import conversations from "@/assets/08-nova-conversations.png";
 import sharing from "@/assets/09-share-conversations.png";
+import bangla from "@/assets/10-bangla-explanations.png";
+import context from "@/assets/11-document-context.png";
+import simpler from "@/assets/12-simpler-explanations.png";
+import exportWork from "@/assets/13-export-your-work.png";
+import tools from "@/assets/14-study-tools.png";
 
 const pictures = [
   { src: annotations, alt: "Protiva PDF annotations: read, mark and draw on your PDF" },
@@ -27,6 +32,11 @@ const pictures = [
   { src: nova, alt: "Meet Nova in your Protiva workspace" },
   { src: conversations, alt: "Ask questions and explore with Nova" },
   { src: sharing, alt: "Share a Nova conversation with a link or QR code" },
+  { src: bangla, alt: "Page explanations in Bangla beside your PDF" },
+  { src: context, alt: "Bring your PDF into the Nova conversation with document context" },
+  { src: simpler, alt: "Ask Nova to explain a hard page in simpler words" },
+  { src: exportWork, alt: "Export your work as PDF, Markdown or a bundle" },
+  { src: tools, alt: "Reading, annotation and study tools in one place" },
 ];
 
 const explanationCards = [
