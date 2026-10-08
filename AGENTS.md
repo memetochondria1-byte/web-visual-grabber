@@ -25,3 +25,4 @@
 - Decorative document graphics live in DocumentGraphic and use scoped semantic-token CSS motion across the introduction, bento and download/reading bands; app screenshots stay grounded, and reduced motion displays complete graphics without animation.
 - Automatic device motion preferences live in MotionPreference context and the root data-motion attribute without visible controls; Reveal and Embla share the preference to preserve accessible feature navigation.
 - Mac installer destinations live in APP_CONFIG and MacDownloadButton stays unavailable without a confirmed compatible download, preventing mislabeled Windows files and broken links.
+- FeatureMotionGraphic mounts one feature-specific decorative SVG scene for the active tour slide; scoped path/scene animations restart on manual navigation without animating the original screenshot.

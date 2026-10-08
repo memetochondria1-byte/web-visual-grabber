@@ -344,6 +344,22 @@ details summary::-webkit-details-marker { display: none; }
   clip-path: inset(6% 0 0);
 }
 .kinetic-chapter { position: relative; }
+.tour-motion-graphic { width: 240px; max-width: 100%; height: 140px; margin-bottom: 20px; pointer-events: none; }
+.tour-motion-graphic svg { width: 100%; height: 100%; overflow: visible; }
+.tour-scene { stroke: var(--accent); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.tour-arrive { fill: var(--card); stroke: var(--foreground); stroke-opacity: .45; }
+.tour-accent-fill { fill: var(--accent); stroke: var(--accent); }
+.tour-baseline { stroke: var(--border); stroke-width: 1; }
+.tour-glyph { fill: var(--accent); stroke: none; font-size: 44px; }
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion="full"] .tour-ink { stroke-dasharray: 1; animation: tour-ink-draw 2s .3s var(--ease-out) both; }
+  html[data-motion="full"] .tour-arrive { animation: tour-scene-arrive 1.1s var(--ease-out) both; transform-box: fill-box; transform-origin: center; }
+  html[data-motion="full"] .tour-arrive:nth-child(2n) { animation-delay: .18s; }
+  html[data-motion="full"] .tour-arrive:nth-child(3n) { animation-delay: .32s; }
+}
+@keyframes tour-ink-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes tour-scene-arrive { from { opacity: 0; clip-path: inset(100% 0 0); } to { opacity: 1; clip-path: inset(0); } }
+@media (max-width: 767px) { .tour-motion-graphic { width: 200px; height: 117px; margin-bottom: 18px; } }
 .feature-swipe-viewport { overflow: hidden; cursor: grab; }
 .feature-swipe-viewport:active { cursor: grabbing; }
 .feature-swipe-track { display: flex; touch-action: pan-y pinch-zoom; }
