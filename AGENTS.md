@@ -12,10 +12,10 @@
 - APK download URL and release info live only in src/config/app.ts (APP_CONFIG) — one place to update per release.
 - Everything the site shows is served from this repository: app pictures and the Protiva logo/QR are imported from src/assets/ and the site icon is public/favicon.png, so no page depends on an outside host.
 - The screenshot feature tour keeps each image and its details together in one ordered collection in ScreenshotGallery.tsx, so scroll navigation and copy cannot drift apart.
-- The feature tour renders one chapter per entry with one screenshot left and its details right on wide screens, stacking on narrow screens without pairing pictures.
+- The feature tour uses Embla for a single horizontal mouse-draggable and touch-swipeable stage, with one screenshot left and its details right on wide screens, stacking on narrow screens; image and copy travel in the same slide.
 - Display and body fonts are loaded from local font packages through the global stylesheet, so typography does not depend on external font hosts.
 
-- The download page renders a sequential screenshot feature tour rather than loading the unused WebGL showcase, keeping picture inspection direct and lightweight.
+- The download page renders a manually navigated screenshot carousel rather than loading the unused WebGL showcase, keeping picture inspection direct and lightweight.
 - Scroll fade-ins use `src/components/download/Reveal.tsx`; content stays visible if scripting is unavailable.
-- Feature chapters use Reveal's narrative variant with scoped kinetic-stage CSS for directional image and staggered text entry; reduced-motion visitors receive immediately visible content without changing the shared bento animation.
+- Feature slides use Embla's horizontal transitions and scoped kinetic-stage CSS for text entry; reduced-motion visitors receive instant navigation without changing the shared bento animation.
 - The bento introduction lives in BentoHero and uses CSS perspective on document layers, not WebGL or animated app screenshots, keeping the entry lightweight and the supplied images readable.
