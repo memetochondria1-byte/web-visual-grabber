@@ -1,18 +1,18 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "@fontsource/space-grotesk/500.css";
-@import "@fontsource/space-grotesk/600.css";
-@import "@fontsource/space-grotesk/700.css";
-@import "@fontsource/dm-sans/400.css";
-@import "@fontsource/dm-sans/500.css";
-@import "@fontsource/dm-sans/600.css";
+@import "@fontsource/sora/500.css";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/sora/700.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -99,6 +99,36 @@
 @utility animate-float { animation: float-y 7s ease-in-out infinite; }
 
 details summary::-webkit-details-marker { display: none; }
+.premium-intro { padding-top: 35px; }
+.premium-meta { animation: premium-enter .8s var(--ease-out) both; }
+.premium-title { margin-top: 32px; font-size: 76px; line-height: 1.12; }
+.premium-title-mask { display: block; overflow: hidden; padding-bottom: 4px; }
+.premium-title-mask > span { display: block; animation: premium-title-enter 1.2s var(--ease-out) both; }
+.premium-title-mask:nth-child(2) > span { animation-delay: 130ms; }
+.premium-title-accent { font-style: italic; }
+.premium-support-grid { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); margin-top: 28px; }
+.premium-support { grid-column: 7 / -1; animation: premium-enter 1s .3s var(--ease-out) both; }
+.store-entry { height: 60px; width: 100%; justify-content: flex-start; padding: 0 14px; gap: 10px; }
+.store-entry:disabled { opacity: 1; background: var(--primary); color: var(--primary-foreground); border: 1px solid var(--primary); }
+.premium-footer { margin-top: 30px; animation: premium-enter 1s .45s var(--ease-out) both; }
+.premium-footer::before { content: ""; position: absolute; height: 2px; width: 48px; margin-top: -21px; background: var(--accent); transform-origin: left; animation: premium-line-enter 1.3s .5s var(--ease-out) both; }
+@keyframes premium-title-enter { from { opacity: 0; transform: translateY(110%); } to { opacity: 1; transform: none; } }
+@keyframes premium-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes premium-line-enter { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (min-width: 1440px) { .premium-title { font-size: 88px; } }
+@media (max-width: 1023px) {
+  .premium-title { font-size: 60px; }
+  .premium-support { grid-column: 5 / -1; }
+}
+@media (max-width: 767px) {
+  .premium-intro { padding-top: 28px; }
+  .premium-title { font-size: 38px; line-height: 1.18; margin-top: 26px; }
+  .premium-support-grid { display: block; margin-top: 22px; }
+  .premium-meta { font-size: 9px; }
+  .premium-support > p { font-size: 16px; }
+  .premium-footer { gap: 22px; }
+}
+@media (max-width: 359px) { .premium-title { font-size: 32px; } .store-entry { padding: 0 8px; gap: 6px; } }
 .bento-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; }
 .bento-masthead { grid-column: span 8; padding: 28px 32px 32px 0; align-self: center; }
 .bento-tile { position: relative; min-width: 0; overflow: hidden; border-radius: var(--radius); padding: 28px; }

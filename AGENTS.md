@@ -18,4 +18,5 @@
 - The download page renders a manually navigated screenshot carousel rather than loading the unused WebGL showcase, keeping picture inspection direct and lightweight.
 - Scroll fade-ins use `src/components/download/Reveal.tsx`; content stays visible if scripting is unavailable.
 - Feature slides use Embla's horizontal transitions and scoped kinetic-stage CSS for text entry; reduced-motion visitors receive instant navigation without changing the shared bento animation.
-- The bento introduction lives in BentoHero and uses CSS perspective on document layers, not WebGL or animated app screenshots, keeping the entry lightweight and the supplied images readable.
+- The introduction lives in PremiumHero as an unframed editorial masthead with CSS-only masked text and staggered entry, keeping the first screen lightweight and reduced-motion safe.
+- Official store destinations live in APP_CONFIG and store entry buttons stay unavailable until confirmed listing URLs are supplied, avoiding fabricated release availability.

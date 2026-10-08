@@ -1,6 +1,7 @@
 # Tasks
-- [ ] Refine the website's premium presentation and animations while retaining the chosen colors, fonts and sideways feature gestures.
-- [ ] Add Google Play and App Store entry buttons at the start; real destination links await confirmation.
+- [x] Apply selected editorial premium presentation, Sora/Manrope and masked/staggered animation with original colors; verified narrow layout, reduced motion, feature navigation and clean build.
+- [x] Add Google Play and App Store entry buttons at the start with Coming soon states.
+- [ ] Activate store buttons — awaits official Google Play and App Store listing URLs from the user.
 - [x] Replace vertical feature chapters with one horizontal, hand-draggable stage; verified mouse drag, touch swipe, synchronized details, arrow navigation, final boundary, reduced motion, narrow layout and clean build.
 - [x] Apply selected kinetic feature stages with original screenshots, directional entry and unchanged palette; verified fourteen images, forward/back navigation, final boundary, narrow layout, reduced motion, routing test and clean build.
 - [x] Apply selected dimensional bento design with original colors, real app picture, layered motion and unchanged fourteen-feature tour; verified desktop/mobile, feature navigation, reduced motion, routing test and clean build.
