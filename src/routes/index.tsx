@@ -90,7 +90,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
               <div>
                 <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">{t('Download Protiva for Android')}</h2>
                 <p className="mt-4 max-w-md text-muted-foreground">
-                  Install the Android app to read PDFs, annotate pages and use Nova.
+                  {t("Install the Android app to read PDFs, annotate pages and use Nova.")}
                 </p>
                 <DownloadButton label="Download Protiva for Android" size="lg" className="mt-8 w-full sm:w-auto" />
                 <MacDownloadButton className="mt-3 w-full sm:ml-3 sm:w-auto" />
@@ -104,8 +104,8 @@ const faqs: { q: string; a: React.ReactNode }[] = [
                     ["Updated", APP_CONFIG.releaseDate],
                     ["File size", APP_CONFIG.fileSize],
                   ].map(([k, v]) => (
-                    <div key={t(k)} className="flex items-center justify-between px-5 py-3.5">
-                      <dt className="text-muted-foreground">{t(k)}</dt>
+                    <div key={k} className="flex items-center justify-between px-5 py-3.5">
+                      <dt className="text-muted-foreground">{t(k ?? "")}</dt>
                       <dd className="font-medium">{v}</dd>
                     </div>
                   ))}
@@ -138,8 +138,8 @@ const faqs: { q: string; a: React.ReactNode }[] = [
             </Reveal>
             <ol className="mt-12 grid gap-10 sm:grid-cols-3">
               {steps.map((s, i) => (
-                <Reveal as="li" key={language === "bn" ? s.n.replace(/\d/g, digit => "০১২৩৪৫৬৭৮৯"[Number(digit)]) : s.n} delay={i * 120} className="border-t pt-6">
-                  <span className="font-mono text-sm text-accent">{language === "bn" ? s.n.replace(/\d/g, digit => "০১২৩৪৫৬৭৮৯"[Number(digit)]) : s.n}</span>
+                <Reveal as="li" key={s.n} delay={i * 120} className="border-t pt-6">
+                  <span className="font-mono text-sm text-accent">{language === "bn" ? s.n.replace(/\d/g, digit => "০১২৩৪৫৬৭৮৯"[Number(digit)] ?? digit) : s.n}</span>
                   <h3 className="mt-3 text-lg font-medium">{t(s.title)}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(s.body)}</p>
                 </Reveal>
@@ -242,8 +242,8 @@ const faqs: { q: string; a: React.ReactNode }[] = [
                   <h3 className="font-medium text-foreground">{t(group.title)}</h3>
                   <ul className="mt-4 space-y-2.5 text-muted-foreground">
                     {group.links.map(([label, href]) => (
-                      <li key={t(label)}>
-                        <a className="transition-colors hover:text-foreground" href={href}>{t(label)}</a>
+                      <li key={label}>
+                        <a className="transition-colors hover:text-foreground" href={href}>{t(label ?? "")}</a>
                       </li>
                     ))}
                   </ul>

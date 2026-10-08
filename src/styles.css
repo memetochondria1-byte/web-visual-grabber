@@ -107,6 +107,7 @@ html[lang="bn"] {
 .language-switch { border-radius: var(--radius); padding: 2px; }
 .language-switch button { min-width: 38px; padding-inline: 8px; border-radius: calc(var(--radius) - 2px); }
 .language-switch button[aria-pressed="true"] { background: var(--primary); color: var(--primary-foreground); }
+@media (max-width: 400px) { header nav > a[download] { width: 36px; padding: 0; font-size: 0; gap: 0; } }
 html[lang="bn"] .font-mono { font-family: var(--font-sans); letter-spacing: 0; }
 html[lang="bn"] .premium-title-mask { padding-bottom: 12px; }
 html[lang="bn"] .premium-title { line-height: 1.28; }

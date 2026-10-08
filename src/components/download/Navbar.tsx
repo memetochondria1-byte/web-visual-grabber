@@ -40,6 +40,7 @@ export function Navbar() {
         <a
           href={APP_CONFIG.apkUrl}
           download={APP_CONFIG.apkFileName}
+          aria-label={t("Download APK")}
           className="ml-auto inline-flex h-9 items-center gap-2 rounded-lg bg-primary px-3.5 text-sm font-medium text-primary-foreground md:hidden"
         >
           <Download className="h-4 w-4" aria-hidden="true" /> Download
