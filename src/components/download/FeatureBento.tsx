@@ -1,3 +1,4 @@
+import { useLanguage } from "./Language";
 import { FileText, Languages, ScanText, Sparkles, Users } from "lucide-react";
 import { Reveal } from "@/components/download/Reveal";
 import annotations from "@/assets/01-pdf-annotations.png";
@@ -29,60 +30,61 @@ const additionalFeatures = [
 ];
 
 export function FeatureBento() {
+  const { t } = useLanguage();
   return (
-    <section id="features" aria-label="Protiva feature overview" className="border-t">
+    <section id="features" aria-label={t('Protiva feature overview')} className="border-t">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <Reveal className="mb-9 flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p className="mb-3 font-mono text-xs uppercase text-accent">PDF tools</p>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Read, annotate and ask Nova.</h2>
+            <p className="mb-3 font-mono text-xs uppercase text-accent">{t('PDF tools')}</p>
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('Read, annotate and ask Nova.')}</h2>
           </div>
-          <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">Add notes to PDFs, extract text with OCR, or join a live study room.</p>
+          <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">{t('Add notes to PDFs, extract text with OCR, or join a live study room.')}</p>
         </Reveal>
-        <div className="protiva-feature-bento" tabIndex={0} role="region" aria-label="Protiva feature overview tiles">
+        <div className="protiva-feature-bento" tabIndex={0} role="region" aria-label={t('Protiva feature overview tiles')}>
           <Reveal as="article" className="overview-tile overview-annotation bg-card" delay={0}>
             <FeatureMotionGraphic index={0} />
-            <div className="overview-label"><FileText aria-hidden="true" /><span>PDF Annotations</span></div>
-            <h3 className="mt-4 text-2xl font-semibold">Highlight text.<br />Add your notes.</h3>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">Highlights, handwritten notes and drawings beside the original text.</p>
-            <div className="overview-image overview-annotation-image"><img src={annotations} alt="Protiva PDF reader with annotations" loading="lazy" draggable={false} /></div>
+            <div className="overview-label"><FileText aria-hidden="true" /><span>{t('PDF Annotations')}</span></div>
+            <h3 className="mt-4 text-2xl font-semibold">{t("Highlight text. Add your notes.")}</h3>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">{t('Highlights, handwritten notes and drawings beside the original text.')}</p>
+            <div className="overview-image overview-annotation-image"><img src={annotations} alt={t('Protiva PDF reader with annotations')} loading="lazy" draggable={false} /></div>
           </Reveal>
           <Reveal as="article" className="overview-tile overview-bangla bg-accent-soft" delay={80}>
             <FeatureMotionGraphic index={9} />
-            <div className="overview-label"><Languages aria-hidden="true" /><span>Bangla Explanations</span></div>
-            <h3 className="mt-4 text-xl font-semibold">Read explanations in Bangla.</h3>
-            <div className="overview-image overview-bangla-image"><img src={bangla} alt="Protiva explaining a PDF page in Bangla" loading="lazy" draggable={false} /></div>
+            <div className="overview-label"><Languages aria-hidden="true" /><span>{t('Bangla Explanations')}</span></div>
+            <h3 className="mt-4 text-xl font-semibold">{t('Read explanations in Bangla.')}</h3>
+            <div className="overview-image overview-bangla-image"><img src={bangla} alt={t('Protiva explaining a PDF page in Bangla')} loading="lazy" draggable={false} /></div>
           </Reveal>
           <Reveal as="article" className="overview-tile overview-nova bg-primary text-primary-foreground" delay={160}>
             <FeatureMotionGraphic index={10} />
-            <div className="overview-label"><Sparkles aria-hidden="true" /><span>Nova · Document Context</span></div>
-            <h3 className="mt-5 text-3xl font-semibold">Ask Nova<br />about your<br /><span className="text-accent">PDF.</span></h3>
-            <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75">Include your PDF in a Nova conversation and ask follow-up questions.</p>
-            <div className="overview-image overview-nova-image"><img src={nova} alt="Nova conversation with PDF document context" loading="lazy" draggable={false} /></div>
+            <div className="overview-label"><Sparkles aria-hidden="true" /><span>{t('Nova · Document Context')}</span></div>
+            <h3 className="mt-5 text-3xl font-semibold">{t("Ask Nova about your PDF.")}</h3>
+            <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75">{t('Include your PDF in a Nova conversation and ask follow-up questions.')}</p>
+            <div className="overview-image overview-nova-image"><img src={nova} alt={t('Nova conversation with PDF document context')} loading="lazy" draggable={false} /></div>
           </Reveal>
           <Reveal as="article" className="overview-tile overview-ocr bg-secondary" delay={120}>
             <ScanText className="h-8 w-8 text-accent" strokeWidth={1.5} aria-hidden="true" />
-            <h3 className="mt-5 text-xl font-semibold">Your library & OCR.</h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Open your PDFs or extract text from a scan.</p>
+            <h3 className="mt-5 text-xl font-semibold">{t('Your library & OCR.')}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t('Open your PDFs or extract text from a scan.')}</p>
             <FeatureMotionGraphic index={1} />
-            <div className="overview-image overview-home-image"><img src={home} alt="Protiva home screen with library and OCR tools" loading="lazy" draggable={false} /></div>
+            <div className="overview-image overview-home-image"><img src={home} alt={t('Protiva home screen with library and OCR tools')} loading="lazy" draggable={false} /></div>
           </Reveal>
           <Reveal as="article" className="overview-tile overview-rooms bg-card" delay={200}>
             <FeatureMotionGraphic index={5} />
             <div className="overview-room-copy">
-              <div className="overview-label"><Users aria-hidden="true" /><span>Live Study Rooms</span></div>
-              <h3 className="mt-4 text-xl font-semibold">Study with others.</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Join a live room for group study.</p>
+              <div className="overview-label"><Users aria-hidden="true" /><span>{t('Live Study Rooms')}</span></div>
+              <h3 className="mt-4 text-xl font-semibold">{t('Study with others.')}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t('Join a live room for group study.')}</p>
             </div>
-            <div className="overview-image overview-rooms-image"><img src={rooms} alt="Protiva live study rooms" loading="lazy" draggable={false} /></div>
+            <div className="overview-image overview-rooms-image"><img src={rooms} alt={t('Protiva live study rooms')} loading="lazy" draggable={false} /></div>
           </Reveal>
           {additionalFeatures.map((feature, index) => (
             <Reveal as="article" key={feature.index} delay={(index % 3) * 80} className={`overview-tile overview-additional ${index % 3 === 1 ? "bg-accent-soft" : "bg-card"}`}>
-              <div className="overview-label"><FileText aria-hidden="true" /><span>{feature.title}</span></div>
-              <h3 className="mt-4 text-xl font-semibold">{feature.heading}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
+              <div className="overview-label"><FileText aria-hidden="true" /><span>{t(feature.title)}</span></div>
+              <h3 className="mt-4 text-xl font-semibold">{t(feature.heading)}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(feature.description)}</p>
               <FeatureMotionGraphic index={feature.index} />
-              <div className="overview-image overview-additional-image"><img src={feature.image} alt={`Protiva — ${feature.title}`} loading="lazy" draggable={false} /></div>
+              <div className="overview-image overview-additional-image"><img src={feature.image} alt={`Protiva — ${t(feature.title)}`} loading="lazy" draggable={false} /></div>
             </Reveal>
           ))}
         </div>

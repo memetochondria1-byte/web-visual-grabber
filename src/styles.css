@@ -1,18 +1,19 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "@fontsource/sora/500.css";
-@import "@fontsource/sora/600.css";
-@import "@fontsource/sora/700.css";
-@import "@fontsource/manrope/400.css";
-@import "@fontsource/manrope/500.css";
-@import "@fontsource/manrope/600.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/noto-sans-bengali/400.css";
+@import "@fontsource/noto-sans-bengali/500.css";
+@import "@fontsource/noto-sans-bengali/600.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -96,6 +97,26 @@
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0; }
   :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
 }
+
+/* Noirrit is used only when locally installed until web-distribution permission is supplied. */
+html[lang="bn"] {
+  --font-sans: "Li Ador Noirrit", "Li Ador Noirrit Unicode", "Li Noirrit", "Noto Sans Bengali", sans-serif;
+  --font-display: var(--font-sans);
+}
+[lang="bn"] { font-family: "Li Ador Noirrit", "Li Ador Noirrit Unicode", "Li Noirrit", "Noto Sans Bengali", sans-serif; }
+.language-switch { border-radius: var(--radius); padding: 2px; }
+.language-switch button { min-width: 38px; padding-inline: 8px; border-radius: calc(var(--radius) - 2px); }
+.language-switch button[aria-pressed="true"] { background: var(--primary); color: var(--primary-foreground); }
+@media (max-width: 400px) { header nav > a[download] { width: 36px; padding: 0; font-size: 0; gap: 0; } }
+html[lang="bn"] .font-mono { font-family: var(--font-sans); letter-spacing: 0; }
+html[lang="bn"] .premium-title-mask { padding-bottom: 12px; }
+html[lang="bn"] .premium-title { line-height: 1.28; }
+html[lang="bn"] .premium-title-accent { font-style: normal; }
+html[lang="bn"] .overview-tile h3 { line-height: 1.5; }
+html[lang="bn"] .overview-tile p { line-height: 1.75; }
+html[lang="bn"] .store-badge-copy { font-family: Arial, sans-serif; }
+@media (max-width: 767px) { html[lang="bn"] .premium-title { font-size: 32px; } }
+@media (min-width: 768px) and (max-width: 1023px) { html[lang="bn"] .premium-title { font-size: 36px; } }
 
 @utility shadow-soft { box-shadow: var(--shadow-soft); }
 @utility shadow-device { box-shadow: var(--shadow-device); }
@@ -572,7 +593,7 @@ html[data-motion="reduced"] [data-reveal] > *, html[data-motion="off"] [data-rev
   .overview-rooms-image { top: auto; bottom: 24px; width: 110px; }
   .overview-room-copy { width: 100%; }
   .overview-rooms .tour-motion-graphic { width: 135px; left: 10px; }
-  .overview-bangla .tour-motion-graphic { width: 110px; left: 8px; bottom: 295px; }
+  .overview-bangla .tour-motion-graphic { width: 85px; left: 5px; bottom: 42px; }
   .overview-bangla-image { width: 145px; }
 }
 @media (min-width:601px) and (max-width:1023px) {

@@ -13,6 +13,8 @@
 - Everything the site shows is served from this repository: app pictures and the Protiva logo/QR are imported from src/assets/ and the site icon is public/favicon.png, so no page depends on an outside host.
 - FeatureBento is the download page's only feature presentation and includes all fourteen repository app pictures once; this prevents duplicate feature sections.
 - Display and body fonts are loaded from local font packages through the global stylesheet, so typography does not depend on external font hosts.
+- Website language is provided by LanguageProvider with an explicit translation dictionary; only the language preference uses browser storage, keeping SSR deterministic and original app screenshots unchanged.
+- Fonts without web redistribution permission may be selected from installed local fonts only; a bundled open-license Bengali fallback keeps reading available without unauthorized font hosting.
 
 - The download page does not mount the legacy screenshot carousel or WebGL showcase, keeping the feature presentation direct and lightweight.
 - Scroll fade-ins use `src/components/download/Reveal.tsx`; content stays visible if scripting is unavailable.

@@ -1,4 +1,6 @@
 # Tasks
+- [x] Add Bengali/English reading and professional English typography; verified all fourteen translated features, FAQs, language persistence, 320–1280px widths, no browser errors and clean build.
+- [ ] Host Li Noirrit Bengali — awaits permission from Lipighor for web font distribution; currently uses installed Noirrit when available and a bundled open-license Bengali fallback.
 - [x] Show the fourteen real features once and remove the repeated carousel and reading-tools section; verified fourteen loaded pictures, fourteen individually animated scenes, mobile scrolling, Features navigation, FAQ, 320–1920px widths, automatic reduced motion, routing test and clean build.
 - [x] Extend the overview with all omitted real app features and matching feature-specific motion graphics; verified 15 tiles covering all 14 original pictures plus OCR, loaded images, animations, tour and narrow layouts.
 - [x] Add unavailable Mac download option, remove visible Format/Platform/Version metadata and remove animation controls; verified desktop/mobile and feature navigation.
