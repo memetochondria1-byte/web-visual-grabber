@@ -15,11 +15,11 @@ import reading from "@/assets/05-continue-reading.webp";
 
 const PHONE_SCREENS = [annotations, nova, bangla, home];
 const SIDE_CARDS = [
-  { src: rooms, x: -3.1, y: 0.15, z: -1.1, ry: 0.5, s: 0.82, speed: 1.2 },
-  { src: simpler, x: 3.1, y: -0.05, z: -1.1, ry: -0.5, s: 0.82, speed: 1.4 },
-  { src: tools, x: -5.0, y: -0.2, z: -2.8, ry: 0.65, s: 0.7, speed: 1.0 },
-  { src: exportWork, x: 5.0, y: 0.1, z: -2.8, ry: -0.65, s: 0.7, speed: 1.1 },
-  { src: reading, x: -1.65, y: 1.15, z: -2.6, ry: 0.25, s: 0.6, speed: 1.3 },
+  { src: rooms, x: -2.35, y: 0.1, z: -0.9, ry: 0.45, s: 0.85, speed: 1.2, core: true },
+  { src: simpler, x: 2.35, y: -0.05, z: -0.9, ry: -0.45, s: 0.85, speed: 1.4, core: true },
+  { src: tools, x: -3.9, y: -0.1, z: -2.4, ry: 0.6, s: 0.7, speed: 1.0, core: false },
+  { src: exportWork, x: 3.9, y: 0.15, z: -2.4, ry: -0.6, s: 0.7, speed: 1.1, core: false },
+  { src: reading, x: -1.3, y: 1.2, z: -2.2, ry: 0.25, s: 0.55, speed: 1.3, core: false },
 ];
 
 /** Rounded rectangle geometry with UVs that cover the whole picture. */
@@ -108,7 +108,7 @@ function Phone({ pointer }: { pointer: React.MutableRefObject<THREE.Vector2> }) 
   );
 }
 
-function SideCard({ card, index }: { card: (typeof SIDE_CARDS)[number]; index: number }) {
+function SideCard({ card }: { card: (typeof SIDE_CARDS)[number] }) {
   return (
     <Float speed={card.speed} rotationIntensity={0.15} floatIntensity={0.9} floatingRange={[-0.12, 0.12]}>
       <group position={[card.x, card.y, card.z]} rotation={[0, card.ry, 0]} scale={card.s}>
@@ -118,19 +118,27 @@ function SideCard({ card, index }: { card: (typeof SIDE_CARDS)[number]; index: n
         <Suspense fallback={null}>
           <Screen src={card.src} width={1.0} radius={0.1} />
         </Suspense>
-        <mesh visible={false}>
-          <boxGeometry args={[0, 0, index]} />
-        </mesh>
       </group>
     </Float>
+  );
+}
+
+function Cards() {
+  const { size } = useThree();
+  const compact = size.width < 640;
+  return (
+    <>
+      {SIDE_CARDS.filter((c) => !compact || c.core).map((c) => (
+        <SideCard key={c.src} card={compact ? { ...c, x: c.x * 0.62, s: c.s * 0.8 } : c} />
+      ))}
+    </>
   );
 }
 
 function Rig({ pointer, children }: { pointer: React.MutableRefObject<THREE.Vector2>; children: React.ReactNode }) {
   const group = useRef<THREE.Group>(null);
   const { size } = useThree();
-  // Scale the whole arrangement so it fits narrow screens.
-  const fit = Math.min(1, Math.max(0.42, size.width / 1000));
+  const fit = 1;
   useFrame((_, delta) => {
     const g = group.current;
     if (!g) return;
@@ -173,7 +181,7 @@ export default function Hero3DScene() {
       <Canvas
         dpr={[1, 2]}
         frameloop={visible ? "always" : "never"}
-        camera={{ position: [0, 0, 7.4], fov: 38 }}
+        camera={{ position: [0, 0, 5.9], fov: 38 }}
         gl={{ alpha: true, antialias: true }}
         style={{ background: "transparent" }}
       >
@@ -186,9 +194,7 @@ export default function Hero3DScene() {
         </Environment>
         <Rig pointer={pointer}>
           <Phone pointer={pointer} />
-          {SIDE_CARDS.map((c, i) => (
-            <SideCard key={i} card={c} index={i} />
-          ))}
+          <Cards />
         </Rig>
       </Canvas>
     </div>
