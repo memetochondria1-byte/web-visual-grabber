@@ -644,3 +644,86 @@ html[data-motion="reduced"] [data-reveal] > *, html[data-motion="off"] [data-rev
 @keyframes motion-file-export { 0%,15% { translate: 0 -8px; opacity: 0; } 25% { opacity: 1; } 75% { translate: 0 14px; opacity: 1; } 85%,100% { translate: 0 14px; opacity: 0; } }
 @keyframes motion-lens-scan { 0%,15%,100% { translate: 0 0; } 50%,70% { translate: 0 12px; } }
 
+/* Kinetic panels: construction and ink move, never the original app pictures. */
+:root {
+  --motion-panel: color-mix(in oklch, var(--accent) 8%, var(--card));
+  --motion-panel-edge: color-mix(in oklch, var(--accent) 28%, var(--border));
+  --shadow-panel-focus: 0 18px 38px -24px color-mix(in oklch, var(--foreground) 30%, transparent);
+  --ease-panel: cubic-bezier(.16, 1, .3, 1);
+}
+.kinetic-reveal { transition: opacity .8s var(--ease-panel), clip-path 1s var(--ease-panel); }
+.kinetic-reveal[data-reveal="pending"] { opacity: 0; clip-path: inset(0 0 12% 0); }
+.kinetic-reveal[data-reveal="shown"] { opacity: 1; clip-path: inset(0); }
+.overview-tile { --panel-origin: left; transition: border-color .5s var(--ease-panel), box-shadow .5s var(--ease-panel), opacity .8s var(--ease-panel), clip-path 1s var(--ease-panel); }
+.overview-tile:nth-child(2n) { --panel-origin: right; }
+.overview-tile::before { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: var(--motion-panel); transform-origin: var(--panel-origin); }
+.overview-nova::before { background: color-mix(in oklch, var(--accent) 7%, var(--primary)); }
+.overview-tile::after { content: ''; position: absolute; left: 26px; top: 0; height: 2px; width: 44px; background: var(--accent); transform-origin: left; }
+.motion-panel-back { fill: var(--accent-soft); stroke: var(--motion-panel-edge); stroke-width: .7; }
+.motion-panel-front { fill: var(--card); stroke: var(--border); stroke-width: .7; }
+.motion-panel-layers { opacity: .65; }
+.motion-calibration { fill: var(--accent); stroke: var(--accent); stroke-width: 1; opacity: .55; }
+.overview-nova .motion-panel-back { fill: var(--primary); }
+.overview-nova .motion-panel-front { fill: var(--primary); stroke: var(--primary-foreground); stroke-opacity: .2; }
+.intro-expanding-panel { position: absolute; width: 88%; height: 80%; right: 3%; bottom: 8%; pointer-events: none; }
+.intro-expanding-panel > span { position: absolute; inset: 0; border: 1px solid var(--motion-panel-edge); border-radius: var(--radius); background: var(--accent-soft); transform-origin: right; }
+.intro-expanding-panel > span:nth-child(2) { inset: 15px 14px -15px -14px; background: var(--card); border-color: var(--border); }
+.intro-expanding-panel > span:nth-child(3) { inset: 30px 28px -30px -28px; background: transparent; border-color: var(--border); }
+.intro-document-graphic { z-index: 1; }
+.mobile-product-edge { z-index: 1; }
+.mobile-product-image { z-index: 2; animation: none; }
+.premium-support { animation: none; }
+.band-document-graphic { position: absolute; right: 22%; bottom: -30px; width: 180px; opacity: .18; }
+.download-motion-band > .kinetic-reveal { position: relative; }
+.installation-step { min-width: 0; }
+.installation-step-graphic { width: 180px; max-width: 100%; height: 110px; margin: 16px 0 4px; }
+.installation-step > h3, .installation-step > p { position: relative; }
+.motion-page footer a { text-underline-offset: 4px; }
+@media (hover:hover) {
+  .overview-tile:hover { border-color: var(--motion-panel-edge); box-shadow: var(--shadow-panel-focus); }
+  .motion-page footer a:hover { text-decoration: underline; }
+}
+@media (prefers-reduced-motion:no-preference) {
+  html[data-motion="full"] .intro-expanding-panel > span { animation: kinetic-panel-open 1.4s .15s var(--ease-panel) both; }
+  html[data-motion="full"] .intro-expanding-panel > span:nth-child(2) { animation-delay: .3s; }
+  html[data-motion="full"] .intro-expanding-panel > span:nth-child(3) { animation-delay: .45s; }
+  html[data-motion="full"] .premium-support > * { animation: kinetic-copy-in .85s .35s var(--ease-panel) both; }
+  html[data-motion="full"] .premium-support > *:nth-child(2) { animation-delay: .48s; }
+  html[data-motion="full"] .premium-support > *:nth-child(3) { animation-delay: .56s; }
+  html[data-motion="full"] .premium-support > *:nth-child(4) { animation-delay: .64s; }
+  html[data-motion="full"] .overview-tile[data-reveal="shown"]::before { animation: kinetic-panel-open 1.15s var(--reveal-delay, 0ms) var(--ease-panel) both; }
+  html[data-motion="full"] .overview-tile[data-reveal="shown"]::after { animation: premium-line-enter 1.1s calc(var(--reveal-delay, 0ms) + .25s) var(--ease-panel) both; }
+  html[data-motion="full"] .overview-tile[data-reveal="shown"] .overview-label,
+  html[data-motion="full"] .overview-tile[data-reveal="shown"] h3,
+  html[data-motion="full"] .overview-tile[data-reveal="shown"] p { animation: kinetic-copy-in .85s calc(var(--reveal-delay, 0ms) + .12s) var(--ease-panel) both; }
+  html[data-motion="full"] .overview-tile[data-reveal="shown"] h3 { animation-delay: calc(var(--reveal-delay, 0ms) + .22s); }
+  html[data-motion="full"] .overview-tile[data-reveal="shown"] p { animation-delay: calc(var(--reveal-delay, 0ms) + .32s); }
+  html[data-motion="full"] .motion-panel-back { transform-box: fill-box; transform-origin: left; animation: kinetic-panel-open 1.1s .15s var(--ease-panel) both; }
+  html[data-motion="full"] .motion-panel-front { transform-box: fill-box; transform-origin: right; animation: kinetic-panel-open 1.2s .3s var(--ease-panel) both; }
+  html[data-motion="full"] .motion-calibration path { stroke-dasharray: 1; animation: tour-ink-draw 1.4s .6s var(--ease-panel) both; }
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .tour-arrive { animation: kinetic-graphic-build 1.2s .4s var(--ease-panel) both; }
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .tour-arrive:nth-child(2n) { animation-delay: .55s; }
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .tour-ink { animation: tour-ink-draw 1.8s .6s var(--ease-panel) both; }
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .graphic-back { animation: kinetic-graphic-build 1.1s .1s var(--ease-panel) both; }
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .graphic-middle { animation: kinetic-graphic-build 1.1s .22s var(--ease-panel) both; }
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .graphic-paper { animation: kinetic-graphic-build 1.1s .34s var(--ease-panel) both; }
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .graphic-stroke,
+  html[data-motion="full"] .kinetic-reveal[data-reveal="shown"] .graphic-connector { animation: document-ink-in 1.8s .6s var(--ease-panel) both; }
+  html[data-motion="full"] [data-visible="false"] .tour-motion-graphic *,
+  html[data-motion="full"] [data-visible="false"] .document-graphic * { animation-play-state: paused !important; }
+  html[data-motion="full"] .motion-page details[open] .faq-body { animation: kinetic-copy-in .4s var(--ease-panel) both; }
+}
+@keyframes kinetic-panel-open { from { opacity: 0; transform: scaleX(.08); } to { opacity: 1; transform: scaleX(1); } }
+@keyframes kinetic-copy-in { from { opacity: 0; clip-path: inset(0 0 100% 0); translate: 0 12px; } to { opacity: 1; clip-path: inset(0); translate: 0 0; } }
+@keyframes kinetic-graphic-build { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0); } }
+@media (max-width:767px) {
+  .intro-expanding-panel { width: 205px; height: 145px; right: calc(50% - 108px); bottom: 20px; }
+  .intro-expanding-panel > span:nth-child(2) { inset: 8px 8px -8px -8px; }
+  .intro-expanding-panel > span:nth-child(3) { inset: 16px 16px -16px -16px; }
+  .installation-step-graphic { width: 160px; height: 100px; }
+  .band-document-graphic { right: -40px; width: 150px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .kinetic-reveal[data-reveal="pending"] { opacity: 1; clip-path: none; }
+}
+
