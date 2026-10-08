@@ -40,16 +40,24 @@ export function ScreenshotGallery() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          const index = Number((entry.target as HTMLElement).dataset.featureIndex);
-          setActive(index);
-        }
-      }
-    }, { rootMargin: "-25% 0px -50% 0px", threshold: 0 });
-    rows.current.forEach((row) => { if (row) observer.observe(row); });
-    return () => observer.disconnect();
+    let frame = 0;
+    const update = () => {
+      let current = 0;
+      rows.current.forEach((row, index) => {
+        if (row && row.getBoundingClientRect().top <= 170) current = index;
+      });
+      setActive(current);
+      frame = 0;
+    };
+    const onScroll = () => { if (!frame) frame = window.requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   function goTo(index: number) {
