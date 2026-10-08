@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { ArrowDown, ArrowUp, ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Reveal } from "./Reveal";
 
 import annotations from "@/assets/01-pdf-annotations.png";
 import home from "@/assets/02-home-and-ocr.webp";
@@ -38,39 +38,35 @@ const features = [
 const stageWords = ["ANNOTATE", "WORKSPACE", "CONNECT", "PRO", "READ", "TOGETHER", "NOVA", "EXPLORE", "SHARE", "BANGLA", "CONTEXT", "SIMPLIFY", "EXPORT", "DISCOVER"];
 
 export function ScreenshotGallery() {
-  const rows = useRef<(HTMLElement | null)[]>([]);
   const [active, setActive] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [carouselRef, carousel] = useEmblaCarousel({ loop: false, duration: 35 });
 
   useEffect(() => {
-    let frame = 0;
-    const update = () => {
-      let current = 0;
-      rows.current.forEach((row, index) => {
-        if (row && row.getBoundingClientRect().top <= 170) {
-          current = index;
-        }
-      });
-      setActive(current);
-      frame = 0;
-    };
-    const onScroll = () => { if (!frame) frame = window.requestAnimationFrame(update); };
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(preference.matches);
     update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      window.cancelAnimationFrame(frame);
-    };
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
   }, []);
 
+  useEffect(() => {
+    if (!carousel) return;
+    const update = () => setActive(carousel.selectedScrollSnap());
+    carousel.on("select", update);
+    carousel.on("reInit", update);
+    return () => {
+      carousel.off("select", update);
+      carousel.off("reInit", update);
+    };
+  }, [carousel]);
+
+  useEffect(() => {
+    carousel?.reInit({ duration: reducedMotion ? 0 : 35 });
+  }, [carousel, reducedMotion]);
+
   function goTo(index: number) {
-    const row = rows.current[index];
-    if (!row) return;
-    setActive(index);
-    window.requestAnimationFrame(() => {
-      window.scrollTo({ top: row.getBoundingClientRect().top + window.scrollY - 144, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
-    });
+    carousel?.scrollTo(index, reducedMotion);
   }
 
   return (
@@ -80,24 +76,28 @@ export function ScreenshotGallery() {
         <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Your entire study workflow.</h2>
         <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">From your first PDF to your next breakthrough. Reading, understanding and studying, together in Protiva.</p>
       </div>
-      <div className="sticky top-16 z-20 border-y bg-background/95 backdrop-blur-md">
+      <div className="border-y bg-background">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3">
           <span className="shrink-0 font-mono text-xs tabular-nums text-accent" aria-live="polite">{String(active + 1).padStart(2, "0")} / 14</span>
           <span className="min-w-0 flex-1 truncate text-sm font-medium">{features[active]?.title}</span>
           <div className="flex shrink-0 gap-2">
-            <Button variant="outline" size="icon" aria-label="Previous feature" title="Previous feature" disabled={active === 0} onClick={() => goTo(active - 1)}><ArrowUp /></Button>
-            <Button variant="outline" size="icon" aria-label="Next feature" title="Next feature" disabled={active === features.length - 1} onClick={() => goTo(active + 1)}><ArrowDown /></Button>
+            <Button variant="outline" size="icon" aria-label="Previous feature" title="Previous feature" disabled={active === 0} onClick={() => goTo(active - 1)}><ArrowLeft /></Button>
+            <Button variant="outline" size="icon" aria-label="Next feature" title="Next feature" disabled={active === features.length - 1} onClick={() => goTo(active + 1)}><ArrowRight /></Button>
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl px-5">
+      <div ref={carouselRef} className="feature-swipe-viewport mx-auto max-w-6xl" role="region" aria-roledescription="carousel" aria-label="Protiva features" tabIndex={0} onKeyDown={(event) => {
+        if (event.key === "ArrowRight") { event.preventDefault(); goTo(Math.min(active + 1, features.length - 1)); }
+        if (event.key === "ArrowLeft") { event.preventDefault(); goTo(Math.max(active - 1, 0)); }
+      }}>
+        <div className="feature-swipe-track">
         {features.map((feature, index) => (
-          <article key={feature.title} data-feature-index={index} ref={(element) => { rows.current[index] = element; }} aria-labelledby={`feature-title-${index}`} className="feature-chapter scroll-mt-36 border-b py-16 last:border-b-0 sm:py-20">
-            <Reveal variant="narrative" className="kinetic-chapter grid items-center gap-12 md:grid-cols-2 md:gap-14 lg:gap-20">
+          <article key={feature.title} data-feature-index={index} data-active={index === active} inert={index !== active} aria-hidden={index !== active} aria-roledescription="slide" aria-label={`${index + 1} of ${features.length}`} aria-labelledby={`feature-title-${index}`} className="feature-swipe-slide px-5 py-10 sm:py-14">
+            <div className="kinetic-chapter grid items-center gap-8 md:grid-cols-2 md:gap-14 lg:gap-20">
               <div className="kinetic-image-stage">
                 <span className="kinetic-word" aria-hidden="true">{stageWords[index]}</span>
                 <div className="narrative-picture kinetic-picture mx-auto w-full max-w-[340px] rounded-lg sm:max-w-[380px]">
-                <img src={feature.src} alt={`Protiva — ${feature.title}`} width={768} height={1366} loading={index === 0 ? "eager" : "lazy"} decoding="async" className="aspect-[768/1366] w-full object-contain" />
+                <img src={feature.src} alt={`Protiva — ${feature.title}`} width={768} height={1366} loading={index <= active + 1 ? "eager" : "lazy"} decoding="async" draggable={false} className="aspect-[768/1366] w-full object-contain" />
                 </div>
                 <span className="kinetic-stage-caption font-mono text-xs text-muted-foreground" aria-hidden="true">PROTIVA / ANDROID · {String(index + 1).padStart(2, "0")}</span>
               </div>
@@ -117,9 +117,10 @@ export function ScreenshotGallery() {
                 <div className="ml-2 flex min-w-0 flex-1 gap-1" aria-hidden="true">{features.map((item, step) => <span key={item.title} className={`h-1 rounded-full ${step === index ? "flex-[3] bg-accent" : "flex-1 bg-border"}`} />)}</div>
               </div>
               </div>
-            </Reveal>
+            </div>
           </article>
         ))}
+        </div>
       </div>
     </section>
   );
