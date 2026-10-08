@@ -37,8 +37,8 @@ function roundedRectGeometry(w: number, h: number, r: number) {
   shape.lineTo(x, y + r);
   shape.quadraticCurveTo(x, y, x + r, y);
   const geo = new THREE.ShapeGeometry(shape, 10);
-  const pos = geo.attributes.position as THREE.BufferAttribute;
-  const uv = geo.attributes.uv as THREE.BufferAttribute;
+  const pos = geo.attributes['position'] as THREE.BufferAttribute;
+  const uv = geo.attributes['uv'] as THREE.BufferAttribute;
   for (let i = 0; i < pos.count; i++) {
     uv.setXY(i, (pos.getX(i) + w / 2) / w, (pos.getY(i) + h / 2) / h);
   }
