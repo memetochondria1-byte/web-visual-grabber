@@ -11,19 +11,16 @@
 
 - APK download URL and release info live only in src/config/app.ts (APP_CONFIG) — one place to update per release.
 - Everything the site shows is served from this repository: app pictures and the Protiva logo/QR are imported from src/assets/ and the site icon is public/favicon.png, so no page depends on an outside host.
-- The screenshot feature tour keeps each image and its details together in one ordered collection in ScreenshotGallery.tsx, so scroll navigation and copy cannot drift apart.
-- The feature tour uses Embla for a single horizontal mouse-draggable and touch-swipeable stage, with one screenshot left and its details right on wide screens, stacking on narrow screens; image and copy travel in the same slide.
+- FeatureBento is the download page's only feature presentation and includes all fourteen repository app pictures once; this prevents duplicate feature sections.
 - Display and body fonts are loaded from local font packages through the global stylesheet, so typography does not depend on external font hosts.
 
-- The download page renders a manually navigated screenshot carousel rather than loading the unused WebGL showcase, keeping picture inspection direct and lightweight.
+- The download page does not mount the legacy screenshot carousel or WebGL showcase, keeping the feature presentation direct and lightweight.
 - Scroll fade-ins use `src/components/download/Reveal.tsx`; content stays visible if scripting is unavailable.
-- Feature slides use Embla's horizontal transitions and scoped kinetic-stage CSS for text entry; reduced-motion visitors receive instant navigation without changing the shared bento animation.
 - The introduction lives in PremiumHero as an unframed editorial masthead with CSS-only masked text and staggered entry, keeping the first screen lightweight and reduced-motion safe.
 - Official store destinations live in APP_CONFIG and store entry buttons stay unavailable until confirmed listing URLs are supplied, avoiding fabricated release availability.
-- FeatureBento presents repository app-image excerpts in a desktop grid and a native horizontal mobile overview, separate from the detailed Embla tour, so overview navigation never alters detailed feature navigation.
-- FeatureBento retains its original overview tiles and extends them with the remaining supplied app features using FeatureMotionGraphic; auto-sized additional grid rows preserve complete feature coverage without altering the detailed tour.
+- FeatureBento uses a desktop grid and native horizontal mobile scrolling; home and OCR share one tile so the fourteen pictures have exactly fourteen entries.
 - PremiumHero uses one grounded repository app picture with CSS/SVG document-line reveal, stacked on mobile and placed right of the editorial content on desktop; reduced motion renders the complete illustration without animation.
 - Decorative document graphics live in DocumentGraphic and use scoped semantic-token CSS motion across the introduction, bento and download/reading bands; app screenshots stay grounded, and reduced motion displays complete graphics without animation.
-- Automatic device motion preferences live in MotionPreference context and the root data-motion attribute without visible controls; Reveal and Embla share the preference to preserve accessible feature navigation.
+- Automatic device motion preferences live in MotionPreference context and the root data-motion attribute without visible controls; Reveal and decorative graphics respect the same preference.
 - Mac installer destinations live in APP_CONFIG and MacDownloadButton stays unavailable without a confirmed compatible download, preventing mislabeled Windows files and broken links.
-- FeatureMotionGraphic mounts one feature-specific decorative SVG scene for the active tour slide; scoped path/scene animations restart on manual navigation without animating the original screenshot.
+- Every overview tile mounts a feature-specific FeatureMotionGraphic scene with scoped tool, scan, connection or text motion; only decorative SVG elements animate, and reduced motion leaves complete illustrations visible.
