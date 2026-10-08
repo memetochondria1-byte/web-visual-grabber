@@ -1,11 +1,11 @@
 # Tasks
-- [ ] Show the fourteen real features once, remove the repeated lower feature sections, and enrich every overview illustration with distinct reduced-motion-safe animation.
+- [x] Show the fourteen real features once and remove the repeated carousel and reading-tools section; verified fourteen loaded pictures, fourteen individually animated scenes, mobile scrolling, Features navigation, FAQ, 320–1920px widths, automatic reduced motion, routing test and clean build.
 - [x] Extend the overview with all omitted real app features and matching feature-specific motion graphics; verified 15 tiles covering all 14 original pictures plus OCR, loaded images, animations, tour and narrow layouts.
 - [x] Add unavailable Mac download option, remove visible Format/Platform/Version metadata and remove animation controls; verified desktop/mobile and feature navigation.
 - [x] Add feature-specific motion graphics to all fourteen manually navigated feature slides; verified each animated graphic, original image and automatic reduced motion.
 - [ ] Activate Mac download — awaits a compatible Mac installer or official download URL from the user.
 - [x] Add a page-wide user animation control with full, reduced and off modes; verified all modes, system preference and feature navigation.
-- [ ] Redesign overall page composition, graphics and multi-stage motion to more closely match the supplied video; awaiting valid reference-faithful design previews after generated options violated the locked palette and content requirements.
+- [x] Superseded the pending full-page redesign with the user's latest direction: retain one fourteen-feature overview and enrich its individual illustrations instead of repeating the feature tour.
 - [x] Add varied full-page document motion, stronger bento composition and compact introduction inspired by the supplied video; verified six document graphics, scan animation, five bento tiles, all fourteen carousel screens, FAQ, 320–1920px layouts, reduced motion, routing test and clean build.
 - [x] Replace generic slogans and unsupported claims throughout the served page with plain, feature-specific copy; verified rendered text, all fourteen tour screens, routing test and clean build. Supplied app pictures remain unchanged.
 - [x] Apply selected premium editorial desktop bento with large original app image and document-line motion; verified 390–1440px layouts, image loading, tour navigation, reduced motion, unchanged mobile, routing test and clean build.
