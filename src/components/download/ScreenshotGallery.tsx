@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useMotionPreference } from "./MotionPreference";
 
 import annotations from "@/assets/01-pdf-annotations.png";
 import home from "@/assets/02-home-and-ocr.webp";
@@ -39,16 +40,9 @@ const stageWords = ["ANNOTATE", "WORKSPACE", "CONNECT", "PRO", "READ", "TOGETHER
 
 export function ScreenshotGallery() {
   const [active, setActive] = useState(0);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const motion = useMotionPreference();
+  const reducedMotion = motion !== "full";
   const [carouselRef, carousel] = useEmblaCarousel({ loop: false, duration: 35 });
-
-  useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(preference.matches);
-    update();
-    preference.addEventListener("change", update);
-    return () => preference.removeEventListener("change", update);
-  }, []);
 
   useEffect(() => {
     if (!carousel) return;

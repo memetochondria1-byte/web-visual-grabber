@@ -10,6 +10,7 @@ import { Logo } from "@/components/download/Logo";
 import { PremiumHero } from "@/components/download/PremiumHero";
 import { FeatureBento } from "@/components/download/FeatureBento";
 import { DocumentGraphic } from "@/components/download/DocumentGraphic";
+import { MotionPreference } from "@/components/download/MotionPreference";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
 const DESC =
@@ -67,6 +68,7 @@ function DownloadPage() {
   return (
     <div className="min-h-screen motion-page">
       <Navbar />
+      <MotionPreference>
       <main>
         <PremiumHero />
 
@@ -283,6 +285,7 @@ function DownloadPage() {
           </div>
         </div>
       </footer>
+      </MotionPreference>
     </div>
   );
 }
