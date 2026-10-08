@@ -7,7 +7,7 @@ import { DownloadButton } from "@/components/download/DownloadButton";
 import { Reveal } from "@/components/download/Reveal";
 import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
-import { BentoHero } from "@/components/download/BentoHero";
+import { PremiumHero } from "@/components/download/PremiumHero";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
 const DESC =
@@ -73,7 +73,7 @@ function DownloadPage() {
     <div className="min-h-screen">
       <Navbar />
       <main>
-        <BentoHero />
+        <PremiumHero />
 
         <ScreenshotGallery />
 

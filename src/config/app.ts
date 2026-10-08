@@ -11,6 +11,9 @@ export const APP_CONFIG = {
   releaseDate: "—",
   /** Minimum Android version from the APK's minSdk. Leave "—" until confirmed. */
   minAndroid: "—",
+  /** Leave empty until official store listings are supplied. */
+  googlePlayUrl: "",
+  appStoreUrl: "",
 } as const;
 
 export const LINKS = {
