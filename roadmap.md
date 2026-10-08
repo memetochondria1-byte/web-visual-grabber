@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Show the fourteen real features once, remove the repeated lower feature sections, and enrich every overview illustration with distinct reduced-motion-safe animation.
 - [x] Extend the overview with all omitted real app features and matching feature-specific motion graphics; verified 15 tiles covering all 14 original pictures plus OCR, loaded images, animations, tour and narrow layouts.
 - [x] Add unavailable Mac download option, remove visible Format/Platform/Version metadata and remove animation controls; verified desktop/mobile and feature navigation.
 - [x] Add feature-specific motion graphics to all fourteen manually navigated feature slides; verified each animated graphic, original image and automatic reduced motion.
