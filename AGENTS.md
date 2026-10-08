@@ -11,7 +11,7 @@
 
 - APK download URL and release info live only in src/config/app.ts (APP_CONFIG) — one place to update per release.
 - Everything the site shows is served from this repository: app pictures and the Protiva logo/QR are imported from src/assets/ and the site icon is public/favicon.png, so no page depends on an outside host.
-- The gallery reuses the shared carousel controls in src/components/ui/carousel.tsx so browsing stays consistent.
+- The screenshot feature tour keeps each image and its details together in one ordered collection in ScreenshotGallery.tsx, so scroll navigation and copy cannot drift apart.
 
-- The hero 3D phone showcase lives in `src/components/download/Hero3D.tsx` (client-only, lazy-loads `Hero3DScene.tsx`) so WebGL never runs during server rendering.
+- The download page renders a sequential screenshot feature tour rather than loading the unused WebGL showcase, keeping picture inspection direct and lightweight.
 - Scroll fade-ins use `src/components/download/Reveal.tsx`; content stays visible if scripting is unavailable.
