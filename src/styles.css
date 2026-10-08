@@ -646,8 +646,8 @@ html[data-motion="reduced"] [data-reveal] > *, html[data-motion="off"] [data-rev
 
 /* Kinetic panels: construction and ink move, never the original app pictures. */
 :root {
-  --motion-panel: color-mix(in oklch, var(--accent) 8%, var(--card));
-  --motion-panel-edge: color-mix(in oklch, var(--accent) 28%, var(--border));
+  --motion-panel: color-mix(in srgb, var(--accent) 8%, var(--card));
+  --motion-panel-edge: color-mix(in srgb, var(--accent) 28%, var(--border));
   --shadow-panel-focus: 0 18px 38px -24px color-mix(in oklch, var(--foreground) 30%, transparent);
   --ease-panel: cubic-bezier(.16, 1, .3, 1);
 }
@@ -657,7 +657,7 @@ html[data-motion="reduced"] [data-reveal] > *, html[data-motion="off"] [data-rev
 .overview-tile { --panel-origin: left; transition: border-color .5s var(--ease-panel), box-shadow .5s var(--ease-panel), opacity .8s var(--ease-panel), clip-path 1s var(--ease-panel); }
 .overview-tile:nth-child(2n) { --panel-origin: right; }
 .overview-tile::before { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: var(--motion-panel); transform-origin: var(--panel-origin); }
-.overview-nova::before { background: color-mix(in oklch, var(--accent) 7%, var(--primary)); }
+.overview-nova::before { background: color-mix(in srgb, var(--accent) 7%, var(--primary)); }
 .overview-tile::after { content: ''; position: absolute; left: 26px; top: 0; height: 2px; width: 44px; background: var(--accent); transform-origin: left; }
 .motion-panel-back { fill: var(--accent-soft); stroke: var(--motion-panel-edge); stroke-width: .7; }
 .motion-panel-front { fill: var(--card); stroke: var(--border); stroke-width: .7; }
