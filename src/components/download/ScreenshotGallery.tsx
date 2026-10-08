@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useMotionPreference } from "./MotionPreference";
+import { FeatureMotionGraphic } from "./FeatureMotionGraphic";
 
 import annotations from "@/assets/01-pdf-annotations.png";
 import home from "@/assets/02-home-and-ocr.webp";
@@ -96,6 +97,7 @@ export function ScreenshotGallery() {
                 <span className="kinetic-stage-caption font-mono text-xs text-muted-foreground" aria-hidden="true">PROTIVA / ANDROID · {String(index + 1).padStart(2, "0")}</span>
               </div>
               <div className="min-w-0">
+              {index === active && <FeatureMotionGraphic key={active} index={index} />}
               <header className="narrative-heading mb-8 w-full">
                 <p className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground"><span className="font-mono text-sm font-medium text-accent">{String(index + 1).padStart(2, "0")} / 14</span><span className="h-px w-8 bg-accent/30" aria-hidden="true" />{feature.category}</p>
                 <h3 id={`feature-title-${index}`} className="kinetic-title mt-6 font-semibold">{feature.title}</h3>

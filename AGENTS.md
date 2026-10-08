@@ -23,4 +23,6 @@
 - FeatureBento presents repository app-image excerpts in a desktop grid and a native horizontal mobile overview, separate from the detailed Embla tour, so overview navigation never alters detailed feature navigation.
 - PremiumHero uses one grounded repository app picture with CSS/SVG document-line reveal, stacked on mobile and placed right of the editorial content on desktop; reduced motion renders the complete illustration without animation.
 - Decorative document graphics live in DocumentGraphic and use scoped semantic-token CSS motion across the introduction, bento and download/reading bands; app screenshots stay grounded, and reduced motion displays complete graphics without animation.
-- Page animation preferences live in MotionPreference context and the root data-motion attribute; Reveal and Embla share that preference so reduced/off modes stop motion without breaking feature navigation.
+- Automatic device motion preferences live in MotionPreference context and the root data-motion attribute without visible controls; Reveal and Embla share the preference to preserve accessible feature navigation.
+- Mac installer destinations live in APP_CONFIG and MacDownloadButton stays unavailable without a confirmed compatible download, preventing mislabeled Windows files and broken links.
+- FeatureMotionGraphic mounts one feature-specific decorative SVG scene for the active tour slide; scoped path/scene animations restart on manual navigation without animating the original screenshot.

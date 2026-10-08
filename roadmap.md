@@ -1,4 +1,7 @@
 # Tasks
+- [x] Add unavailable Mac download option, remove visible Format/Platform/Version metadata and remove animation controls; verified desktop/mobile and feature navigation.
+- [x] Add feature-specific motion graphics to all fourteen manually navigated feature slides; verified each animated graphic, original image and automatic reduced motion.
+- [ ] Activate Mac download — awaits a compatible Mac installer or official download URL from the user.
 - [x] Add a page-wide user animation control with full, reduced and off modes; verified all modes, system preference and feature navigation.
 - [ ] Redesign overall page composition, graphics and multi-stage motion to more closely match the supplied video; awaiting valid reference-faithful design previews after generated options violated the locked palette and content requirements.
 - [x] Add varied full-page document motion, stronger bento composition and compact introduction inspired by the supplied video; verified six document graphics, scan animation, five bento tiles, all fourteen carousel screens, FAQ, 320–1920px layouts, reduced motion, routing test and clean build.

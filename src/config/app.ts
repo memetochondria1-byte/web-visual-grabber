@@ -14,6 +14,8 @@ export const APP_CONFIG = {
   /** Leave empty until official store listings are supplied. */
   googlePlayUrl: "",
   appStoreUrl: "",
+  /** Mac-compatible installer URL; leave empty until a DMG/PKG or official Mac download is supplied. */
+  macDownloadUrl: "",
 } as const;
 
 export const LINKS = {
