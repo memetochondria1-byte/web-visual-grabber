@@ -89,14 +89,14 @@ const faqs: { q: string; a: React.ReactNode }[] = [
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
             <Reveal className="download-editorial grid items-center gap-10 py-8 sm:py-12 lg:grid-cols-[1.4fr_1fr]">
               <div>
-                <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">{t('Download Protiva for Android')}</h2>
+                <h2 className="text-3xl font-semibold sm:text-[2.6rem]">{t('Download Protiva for Android')}</h2>
                 <p className="mt-4 max-w-md text-muted-foreground">
                   {t("Install the Android app to read PDFs, annotate pages and use Nova.")}
                 </p>
                 <DownloadButton label="Download Protiva for Android" size="lg" className="mt-8 w-full sm:w-auto" />
                 <MacDownloadButton className="mt-3 w-full sm:ml-3 sm:w-auto" />
                 <p className="mt-2 text-xs text-muted-foreground">{t('Mac download link is not available yet.')}</p>
-                <p className="mt-3 font-mono text-xs text-muted-foreground">{t('Android installation file · APK')}</p>
+
                 <DocumentGraphic kind="export" className="download-document-graphic" />
               </div>
               <div className="flex flex-col gap-4">
@@ -135,7 +135,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
             <Reveal>
               <Eyebrow>{t('Installation')}</Eyebrow>
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">{t('How to install')}</h2>
+              <h2 className="text-3xl font-semibold sm:text-[2.6rem]">{t('How to install')}</h2>
             </Reveal>
             <ol className="mt-12 grid gap-10 sm:grid-cols-3">
               {steps.map((s, i) => (
@@ -155,7 +155,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
           <div className="mx-auto max-w-3xl px-5 py-20 sm:py-28">
             <Reveal>
               <Eyebrow>{t('FAQ')}</Eyebrow>
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">{t('Common questions')}</h2>
+              <h2 className="text-3xl font-semibold sm:text-[2.6rem]">{t('Common questions')}</h2>
             </Reveal>
             <Reveal className="mt-10 divide-y border-y">
               {faqs.map((f) => (

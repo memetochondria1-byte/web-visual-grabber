@@ -727,3 +727,109 @@ html[data-motion="reduced"] [data-reveal] > *, html[data-motion="off"] [data-rev
   .kinetic-reveal[data-reveal="pending"] { opacity: 1; clip-path: none; }
 }
 
+/* Clear text and image zones; pointer responses belong exclusively to the ink. */
+.feature-navigation { display: none; }
+.overview-tile { container-type: inline-size; }
+.overview-tile h3 { max-width: 100%; overflow-wrap: break-word; }
+.overview-label { color: var(--muted-foreground); }
+.overview-nova .overview-label { color: var(--primary-foreground); }
+.overview-tile .tour-motion-graphic { width: 150px; height: 110px; left: 14px; bottom: 65px; }
+.overview-tile .overview-image { top: auto; bottom: 24px; left: auto; right: 22px; transform: none; width: 145px; height: 258px; }
+.overview-tile .overview-image img { width: 100%; height: 100%; object-fit: contain; }
+.overview-tile .motion-reactive-scene { transition: translate .6s var(--ease-panel); }
+.motion-register { fill: none; stroke: var(--motion-panel-edge); stroke-width: .8; }
+.motion-ruler { stroke: var(--muted-foreground); opacity: .4; }
+.motion-process { stroke: var(--accent); stroke-width: 1; fill: none; }
+.motion-process-track { opacity: .45; }
+.motion-process-dot { fill: var(--accent); stroke: none; }
+.motion-process-meter { stroke-width: 2; }
+.graphic-registration { stroke: var(--motion-panel-edge); stroke-width: 1; }
+.graphic-flow { stroke: var(--accent); stroke-dasharray: 5 8; }
+.overview-nova .motion-register { stroke: var(--primary-foreground); opacity: .3; }
+.overview-nova .tour-motion-graphic { bottom: 65px; left: 14px; width: 150px; height: 110px; }
+.overview-nova .tour-arrive { fill: var(--card); stroke: var(--foreground); }
+.overview-nova .motion-plinth { fill: var(--primary); }
+.mobile-product-stage .graphic-pen { transition: translate .6s var(--ease-panel); }
+@media (min-width:1024px) {
+  .protiva-feature-bento { grid-template-rows: none; grid-auto-rows: 510px; }
+  .overview-nova { grid-row: auto; }
+  .overview-tile > p, .overview-room-copy { width: 100%; max-width: none; }
+  .overview-annotation h3, .overview-nova h3, .overview-bangla h3, .overview-rooms h3 { font-size: 28px; line-height: 1.25; }
+  .overview-annotation .tour-motion-graphic { width: 190px; height: 125px; }
+  .overview-bangla .tour-motion-graphic { width: 95px; height: 80px; left: 6px; }
+  .overview-bangla .overview-image { width: 125px; height: 222px; right: 14px; }
+}
+@media (min-width:601px) and (max-width:1023px) {
+  .protiva-feature-bento { grid-auto-rows: 510px; }
+  .overview-tile .overview-image { width: 130px; height: 231px; right: 14px; }
+  .overview-tile .tour-motion-graphic { width: 120px; height: 90px; left: 8px; }
+}
+@media (max-width:767px) {
+  .premium-intro { padding-top: 16px; padding-bottom: 20px; }
+  .premium-meta { font-size: 10px; }
+  .premium-title { font-size: 36px; margin-top: 16px; }
+  .premium-title-accent { font-style: normal; }
+  .mobile-product-stage { height: 214px; margin-top: 12px; }
+  .mobile-product-image { height: 204px; max-width: 58%; object-fit: contain; box-shadow: var(--shadow-soft); }
+  .mobile-product-edge { display: none; }
+  .intro-expanding-panel { width: 225px; height: 175px; right: calc(50% - 125px); bottom: 20px; }
+  .intro-expanding-panel > span:nth-child(2) { inset: 9px 9px -9px -9px; }
+  .intro-expanding-panel > span:nth-child(3) { display: none; }
+  .intro-document-graphic { width: 200px; height: 145px; left: 0; bottom: 10px; margin: 0; }
+  .premium-support-grid { margin-top: 12px; }
+  .premium-support > p { font-size: 12px; line-height: 1.6; }
+  .premium-support > p:first-child { font-size: 14px; }
+  .premium-support > p:nth-of-type(2), .premium-support > p:last-child { font-size: 11px; }
+  .premium-support > [aria-label] { margin-top: 14px; }
+  .premium-actions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; margin-top: 12px; }
+  .premium-actions > * { min-width: 0; width: 100%; height: 44px; padding-inline: 8px; font-size: 12px; white-space: normal; text-align: center; line-height: 1.3; }
+  .premium-actions > *:first-child { grid-column: 1 / -1; font-size: 14px; }
+  .premium-actions svg { flex-shrink: 0; width: 16px; height: 16px; }
+  .store-entry { height: 48px; }
+  #features h2 { font-size: 28px; line-height: 1.3; }
+  .download-editorial h2 { font-size: 28px; line-height: 1.4; }
+  .download-editorial > div { min-width: 0; }
+  .installation-step-graphic { width: 200px; height: 125px; }
+}
+@media (max-width:600px) {
+  .protiva-feature-bento { position: relative; scroll-padding-left: 20px; touch-action: pan-x pan-y; }
+  .overview-tile { flex-basis: min(330px,calc(100% - 42px)); min-width: min(330px,calc(100% - 42px)); height: 490px; min-height: 490px; padding: 22px; }
+  .overview-tile .overview-image { width: 145px; height: 258px; right: 16px; bottom: 22px; }
+  .overview-tile .tour-motion-graphic { width: 130px; height: 100px; left: 6px; bottom: 95px; }
+  .overview-tile h3, .overview-nova h3 { font-size: 24px; line-height: 1.3; margin-top: 14px; }
+  .overview-tile p { font-size: 14px; line-height: 1.65; max-width: 100%; }
+  .overview-label { font-size: 12px; }
+  .feature-navigation { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+  .feature-navigation button { height: 44px; width: 44px; }
+}
+@media (max-width:359px) {
+  .overview-tile .overview-image { width: 130px; height: 231px; right: 12px; }
+  .overview-tile .tour-motion-graphic { width: 105px; height: 85px; left: 3px; }
+  .premium-title { font-size: 32px; }
+  .premium-actions > * { font-size: 11px; gap: 5px; }
+}
+@media (prefers-reduced-motion:no-preference) {
+  html[data-motion="full"] .motion-process-track { stroke-dasharray: .12 .04; animation: drafting-circuit 9s linear infinite; }
+  html[data-motion="full"] .motion-process-meter { transform-box: fill-box; transform-origin: left; animation: drafting-meter 5s var(--ease-panel) infinite; }
+  html[data-motion="full"] .motion-process-dot { animation: drafting-cursor 6s var(--ease-panel) infinite; }
+  html[data-motion="full"] .graphic-flow { animation: drafting-flow 4s linear infinite; }
+  html[data-motion="full"] .document-graphic-annotate .graphic-pen { animation: drafting-pen 6s ease-in-out infinite; }
+  html[data-motion="full"] .document-graphic-export .graphic-node { animation: drafting-export 6s var(--ease-panel) infinite; }
+  html[data-motion="full"] .document-graphic-connect .graphic-node-lines { animation: drafting-meter 5s var(--ease-panel) infinite; transform-box: fill-box; transform-origin: left; }
+  html[data-motion="full"] [data-engaged="true"] .motion-reactive-scene { translate: 6px -3px; }
+  html[data-motion="full"] [data-engaged="true"] .motion-detail { stroke-width: 3; }
+  html[data-motion="full"] [data-visible="false"] .tour-motion-graphic *, html[data-motion="full"] [data-visible="false"] .document-graphic * { animation-play-state: paused !important; }
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  html[data-motion="full"] .overview-tile:hover .motion-reactive-scene { translate: var(--graphic-x,0px) var(--graphic-y,0px); }
+  html[data-motion="full"] .overview-tile:hover .motion-scanner { animation: none; translate: 0 var(--scan-position,0px); transition: translate .25s ease-out; }
+  html[data-motion="full"] .mobile-product-stage:hover .graphic-pen { animation: none; translate: var(--graphic-x,0px) var(--graphic-y,0px); }
+  html[data-motion="full"] .overview-tile:hover .motion-process-track { animation-duration: 3s; }
+}
+@keyframes drafting-circuit { to { stroke-dashoffset: -1; } }
+@keyframes drafting-meter { 0%,10% { scale: .12 1; opacity: .3; } 65%,85% { scale: 1 1; opacity: 1; } 100% { scale: 1 1; opacity: .3; } }
+@keyframes drafting-cursor { 0%,10%,100% { translate: 0 0; opacity: .3; } 45% { translate: 0 -100px; opacity: 1; } 75%,85% { translate: 200px -100px; opacity: 1; } }
+@keyframes drafting-flow { to { stroke-dashoffset: -52; } }
+@keyframes drafting-pen { 0%,15%,100% { translate: 0 0; } 55%,75% { translate: -38px 8px; } }
+@keyframes drafting-export { 0%,15%,100% { opacity: .3; clip-path: inset(0 0 100% 0); } 60%,85% { opacity: 1; clip-path: inset(0); } }
+

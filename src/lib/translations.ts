@@ -1,5 +1,10 @@
 /** Website copy only; original app screenshots and product names stay unchanged. */
 export const bengali: Record<string, string> = {
+  "PDF & study tools": "PDF ও পড়াশোনার টুল",
+  "Read PDFs, write notes and ask Nova for explanations in Bangla.": "PDF পড়ুন, নোট লিখুন ও Nova-এর কাছে বাংলায় ব্যাখ্যা চান।",
+  "Highlight text and add handwritten notes or drawings.": "লেখা হাইলাইট করুন, হাতে নোট লিখুন বা আঁকুন।",
+  "Read explanations of PDF passages in Bangla.": "PDF-এর বিভিন্ন অংশের ব্যাখ্যা বাংলায় পড়ুন।",
+  "Previous feature": "আগের ফিচার", "Next feature": "পরের ফিচার",
   "Web App": "ওয়েব অ্যাপ", "Features": "ফিচার", "Download": "ডাউনলোড", "Open Protiva": "Protiva খুলুন",
   "PDF READER & STUDY TOOLS": "PDF পড়া ও পড়াশোনার টুল", "PROTIVA / ANDROID": "PROTIVA / অ্যান্ড্রয়েড",
   "Protiva AI,": "Protiva AI,", "for Android.": "অ্যান্ড্রয়েডের জন্য।",

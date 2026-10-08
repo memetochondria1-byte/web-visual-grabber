@@ -38,8 +38,10 @@ export function FeatureMotionGraphic({ index }: { index: number }) {
         <g className="motion-panel-layers"><rect className="motion-panel-back" x="27" y="17" width="186" height="108" rx="4" /><rect className="motion-panel-front" x="35" y="25" width="170" height="92" rx="3" /></g>
         <g className="motion-drafting"><path d="M24 22h192M24 120h192M32 15v112M208 15v112" /><path d="M24 22h16m-8-8v16M200 120h16m-8-8v16" /></g>
         <path className="motion-plinth" d="m30 119 25 12h134l25-12-25-10H55z" />
-        <g className="tour-scene">{motifs[index]}</g>
+        <g className="motion-register"><path d="M16 43V16h27M197 16h27v27M16 97v27h27M197 124h27V97" /><path className="motion-ruler" d="M46 126v-4m12 4v-7m12 7v-4m12 4v-7m12 7v-4m12 4v-7m12 7v-4m12 4v-7m12 7v-4m12 4v-7m12 7v-4m12 4v-7" /></g>
+        <g className="motion-reactive-scene"><g className="tour-scene">{motifs[index]}</g></g>
         <g className="motion-detail">{accents[index]}</g>
+        <g className="motion-process"><path className="motion-process-track" pathLength={1} d={index % 3 === 0 ? "M20 112V12h200v100" : index % 3 === 1 ? "M20 70h25m150 0h25V12H20v100" : "M20 112h200V12H20v100"} /><circle className="motion-process-dot" cx="20" cy="112" r="3" /><path className="motion-process-meter" d="M27 137h40m5 0h18m5 0h8" /></g>
         <g className="motion-calibration"><path pathLength={1} d="M20 8h50M170 132h50" /><circle cx="20" cy="8" r="2" /><circle cx="220" cy="132" r="2" /></g>
         <path className="tour-baseline" d="M24 134h192" />
       </svg>
