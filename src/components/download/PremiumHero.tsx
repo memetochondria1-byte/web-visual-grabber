@@ -27,7 +27,7 @@ export function PremiumHero() {
             <Button disabled className="store-entry" aria-label="App Store — Coming soon"><Apple className="h-7 w-7 shrink-0" aria-hidden="true" /><span className="text-left"><span className="block text-[10px] font-normal">Coming soon</span><span className="block text-sm font-semibold">App Store</span></span></Button>
           </div>
           <div className="mt-4 flex flex-wrap gap-3">
-            <DownloadButton className="flex-1 sm:flex-none" />
+            <DownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
             <Button asChild variant="outline" className="h-12 flex-1 px-5 sm:flex-none"><a href={LINKS.webApp}>Open Web App <ArrowUpRight aria-hidden="true" /></a></Button>
           </div>
         </div>
