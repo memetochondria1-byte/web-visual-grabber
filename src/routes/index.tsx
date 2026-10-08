@@ -4,6 +4,7 @@ import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
 import { DownloadButton } from "@/components/download/DownloadButton";
+import { Hero3D } from "@/components/download/Hero3D";
 import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
 
@@ -98,7 +99,11 @@ function DownloadPage() {
             Official Protiva AI app · Direct download · No third-party mirror
           </p>
 
-          <div className="animate-fade-up mt-16 [animation-delay:380ms]">
+          <div className="animate-fade-up mt-10 [animation-delay:380ms] sm:mt-14">
+            <Hero3D />
+          </div>
+
+          <div className="mt-6 sm:mt-10">
             <ScreenshotGallery />
           </div>
         </section>
