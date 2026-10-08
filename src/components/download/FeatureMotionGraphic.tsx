@@ -16,5 +16,31 @@ export function FeatureMotionGraphic({ index }: { index: number }) {
     <><path className="tour-arrive" d="M50 32h65v76H50zM59 26h65v76M68 20h65v76M166 73h41v37h-52V64h21l8 9" /><path className="tour-ink" pathLength={1} d="M94 48h57v33m-7-8 7 8 7-8" /></>,
     <><path className="tour-arrive" d="M43 29h63v80H43zM144 29h63v80h-63z" /><circle className="tour-arrive" cx="76" cy="61" r="15" /><path className="tour-ink" pathLength={1} d="m87 72 12 12M154 48h43m-43 18h33m-33 18h40M108 70h33" /></>,
   ];
-  return <div className="tour-motion-graphic" data-motion-feature={index} aria-hidden="true"><svg viewBox="0 0 240 140" fill="none"><path className="tour-baseline" d="M24 126h192" /><g className="tour-scene">{motifs[index]}</g></svg></div>;
+  const accents = [
+    <path className="motion-tool" d="m148 83 6 5-17 24-9 4 1-10z" />,
+    <path className="motion-scanner" d="M38 48h164" />,
+    <path className="motion-confirm" d="m149 94 9 9 22-24" />,
+    <path className="motion-rays" d="M178 19v-7m18 23h8m-40-14-5-5m33 6 5-5" />,
+    <path className="motion-bookmark" d="M73 30h11v28l-5-5-6 5z" />,
+    <>{[[60,36],[180,36],[120,108]].map(([x,y],i)=><circle className={`motion-ring motion-ring-${i}`} key={i} cx={x} cy={y} r="18" />)}</>,
+    <path className="motion-spark" d="m171 31 3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />,
+    <g className="motion-typing"><circle cx="120" cy="92" r="2" /><circle cx="134" cy="92" r="2" /><circle cx="148" cy="92" r="2" /></g>,
+    <circle className="motion-packet" cx="84" cy="58" r="4" />,
+    <path className="motion-language" d="M153 94h40m-40 7h27" />,
+    <path className="motion-context" d="M112 68h49" />,
+    <g className="motion-simplify"><path d="M162 49h43M162 69h34M162 89h43" /></g>,
+    <path className="motion-export" d="M145 30v24m-7-7 7 7 7-7" />,
+    <path className="motion-lens" d="M55 42h40v39H55z" />,
+  ];
+  return (
+    <div className="tour-motion-graphic" data-motion-feature={index} aria-hidden="true">
+      <svg viewBox="0 0 240 140" fill="none">
+        <g className="motion-drafting"><path d="M24 22h192M24 120h192M32 15v112M208 15v112" /><path d="M24 22h16m-8-8v16M200 120h16m-8-8v16" /></g>
+        <path className="motion-plinth" d="m30 119 25 12h134l25-12-25-10H55z" />
+        <g className="tour-scene">{motifs[index]}</g>
+        <g className="motion-detail">{accents[index]}</g>
+        <path className="tour-baseline" d="M24 134h192" />
+      </svg>
+    </div>
+  );
 }

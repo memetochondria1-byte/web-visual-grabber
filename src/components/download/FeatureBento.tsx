@@ -1,10 +1,9 @@
-import { FileText, Languages, ScanText, Sparkles, Users, ArrowUpRight } from "lucide-react";
+import { FileText, Languages, ScanText, Sparkles, Users } from "lucide-react";
 import { Reveal } from "@/components/download/Reveal";
 import annotations from "@/assets/01-pdf-annotations.png";
 import nova from "@/assets/11-document-context.png";
 import bangla from "@/assets/10-bangla-explanations.png";
 import rooms from "@/assets/06-live-study-rooms.png";
-import { DocumentGraphic } from "./DocumentGraphic";
 import { FeatureMotionGraphic } from "./FeatureMotionGraphic";
 import home from "@/assets/02-home-and-ocr.webp";
 import signIn from "@/assets/03-sign-in.png";
@@ -18,7 +17,6 @@ import exportWork from "@/assets/13-export-your-work.png";
 import tools from "@/assets/14-study-tools.png";
 
 const additionalFeatures = [
-  { index: 1, title: "Your Study Space", heading: "Open your library, Nova or OCR.", description: "Find your PDFs, conversations and text extraction tools on the home screen.", image: home },
   { index: 2, title: "Sign In", heading: "Access your Protiva account.", description: "Sign in to your account from the Android app.", image: signIn },
   { index: 3, title: "Protiva Pro", heading: "View the Pro plan.", description: "Check the app’s Pro screen for available plan details.", image: pro },
   { index: 4, title: "Continue Reading", heading: "Return to a recent PDF.", description: "Reopen recently viewed documents and continue reading.", image: reading },
@@ -43,20 +41,20 @@ export function FeatureBento() {
         </Reveal>
         <div className="protiva-feature-bento" tabIndex={0} role="region" aria-label="Protiva feature overview tiles">
           <Reveal as="article" className="overview-tile overview-annotation bg-card" delay={0}>
-            <DocumentGraphic kind="annotate" className="tile-document-graphic" />
+            <FeatureMotionGraphic index={0} />
             <div className="overview-label"><FileText aria-hidden="true" /><span>PDF Annotations</span></div>
             <h3 className="mt-4 text-2xl font-semibold">Highlight text.<br />Add your notes.</h3>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">Highlights, handwritten notes and drawings beside the original text.</p>
             <div className="overview-image overview-annotation-image"><img src={annotations} alt="Protiva PDF reader with annotations" loading="lazy" draggable={false} /></div>
           </Reveal>
           <Reveal as="article" className="overview-tile overview-bangla bg-accent-soft" delay={80}>
-            <span className="bangla-glyph" aria-hidden="true">অ</span>
+            <FeatureMotionGraphic index={9} />
             <div className="overview-label"><Languages aria-hidden="true" /><span>Bangla Explanations</span></div>
             <h3 className="mt-4 text-xl font-semibold">Read explanations in Bangla.</h3>
             <div className="overview-image overview-bangla-image"><img src={bangla} alt="Protiva explaining a PDF page in Bangla" loading="lazy" draggable={false} /></div>
           </Reveal>
           <Reveal as="article" className="overview-tile overview-nova bg-primary text-primary-foreground" delay={160}>
-            <DocumentGraphic kind="connect" className="tile-document-graphic" />
+            <FeatureMotionGraphic index={10} />
             <div className="overview-label"><Sparkles aria-hidden="true" /><span>Nova · Document Context</span></div>
             <h3 className="mt-5 text-3xl font-semibold">Ask Nova<br />about your<br /><span className="text-accent">PDF.</span></h3>
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75">Include your PDF in a Nova conversation and ask follow-up questions.</p>
@@ -64,12 +62,13 @@ export function FeatureBento() {
           </Reveal>
           <Reveal as="article" className="overview-tile overview-ocr bg-secondary" delay={120}>
             <ScanText className="h-8 w-8 text-accent" strokeWidth={1.5} aria-hidden="true" />
-            <h3 className="mt-5 text-xl font-semibold">Extract text with OCR.</h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Turn scanned text into text you can copy.</p>
-            <DocumentGraphic kind="scan" className="ocr-document-graphic" />
+            <h3 className="mt-5 text-xl font-semibold">Your library & OCR.</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Open your PDFs or extract text from a scan.</p>
+            <FeatureMotionGraphic index={1} />
+            <div className="overview-image overview-home-image"><img src={home} alt="Protiva home screen with library and OCR tools" loading="lazy" draggable={false} /></div>
           </Reveal>
           <Reveal as="article" className="overview-tile overview-rooms bg-card" delay={200}>
-            <svg className="room-orbit" viewBox="0 0 200 160" fill="none" aria-hidden="true"><path pathLength={1} d="M26 80h148M100 25v110M47 38l106 84M47 122l106-84" /><circle cx="100" cy="80" r="23" /><circle cx="26" cy="80" r="8" /><circle cx="174" cy="80" r="8" /><circle cx="100" cy="25" r="8" /><circle cx="100" cy="135" r="8" /></svg>
+            <FeatureMotionGraphic index={5} />
             <div className="overview-room-copy">
               <div className="overview-label"><Users aria-hidden="true" /><span>Live Study Rooms</span></div>
               <h3 className="mt-4 text-xl font-semibold">Study with others.</h3>
@@ -87,8 +86,6 @@ export function FeatureBento() {
             </Reveal>
           ))}
         </div>
-        <div className="mobile-overview-marker" aria-hidden="true">{Array.from({ length: 15 }, (_, index) => <span key={index} />)}</div>
-        <a href="#feature-tour" className="mt-7 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">See all 14 app screens <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
       </div>
     </section>
   );

@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { FileText, Languages, Linkedin, Plus, Users } from "lucide-react";
+import { Linkedin, Plus } from "lucide-react";
 import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
 import { DownloadButton } from "@/components/download/DownloadButton";
 import { Reveal } from "@/components/download/Reveal";
-import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
 import { PremiumHero } from "@/components/download/PremiumHero";
 import { FeatureBento } from "@/components/download/FeatureBento";
@@ -41,12 +40,6 @@ const steps = [
   { n: "03", title: "Start reading", body: "Open Protiva and choose a PDF from your library." },
 ];
 
-const readingTools = [
-  { icon: FileText, title: "PDF annotations", body: "Highlight passages and add handwritten notes to the page." },
-  { icon: Languages, title: "Bangla explanations", body: "Read a page explanation alongside the original PDF." },
-  { icon: Users, title: "Live study rooms", body: "Join a group study session in the app." },
-];
-
 const faqs: { q: string; a: React.ReactNode }[] = [
   { q: "Is this the official Protiva Android app?", a: "Yes. This is the Protiva Android download page." },
   { q: "Where can I find Protiva Pro?", a: "Open the Protiva Pro screen in the app to check the plan details." },
@@ -74,8 +67,6 @@ function DownloadPage() {
         <PremiumHero />
 
         <FeatureBento />
-
-        <ScreenshotGallery />
 
         <section aria-label="Download Protiva" className="download-motion-band bg-primary text-primary-foreground border-y">
           <Reveal className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-center sm:flex-row sm:text-left">
@@ -149,31 +140,6 @@ function DownloadPage() {
                 </Reveal>
               ))}
             </ol>
-          </div>
-        </section>
-
-        {/* TRUST */}
-        <section className="reading-motion border-t">
-          <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-28 lg:grid-cols-2">
-            <Reveal>
-              <Eyebrow>Reading & study</Eyebrow>
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Tools for your PDFs.</h2>
-              <p className="mt-5 max-w-lg leading-relaxed text-muted-foreground">
-                Annotate a page as you read, ask for an explanation in Bangla, or join others in a live study room.
-              </p>
-              <DocumentGraphic kind="connect" className="reading-document-graphic" />
-            </Reveal>
-            <ul className="space-y-3">
-              {readingTools.map((t, i) => (
-                <Reveal as="li" key={t.title} delay={i * 100} className="flex gap-4 rounded-xl border bg-card p-5 hover:-translate-y-0.5 hover:shadow-soft">
-                  <t.icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.6} aria-hidden="true" />
-                  <div>
-                    <h3 className="font-medium">{t.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{t.body}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </ul>
           </div>
         </section>
 
