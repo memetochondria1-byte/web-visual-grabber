@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LINKS, APP_CONFIG } from "@/config/app";
 import { DownloadButton } from "./DownloadButton";
+import studySpace from "@/assets/02-home-and-ocr.webp";
 
 function PlayMark() {
   return <svg viewBox="0 0 32 36" className="store-mark" aria-hidden="true"><path className="play-blue" d="M1 1.5 18 18 1 34.5Z" /><path className="play-green" d="m1 1.5 21 12-4 4.5Z" /><path className="play-red" d="m1 34.5 17-16.5 4 4.5Z" /><path className="play-yellow" d="m18 18 4-4.5 8 4.5-8 4.5Z" /></svg>;
@@ -23,6 +24,15 @@ export function PremiumHero() {
         <span className="premium-title-mask"><span>Protiva AI,</span></span>
         <span className="premium-title-mask"><span className="premium-title-accent text-accent">now on Android.</span></span>
       </h1>
+      <div className="mobile-product-stage">
+        <svg className="mobile-motion-lines" viewBox="0 0 350 190" fill="none" aria-hidden="true">
+          <path className="motion-document" d="M36 49h52l15 15v76H36V49Zm52 0v15h15M49 82h41M49 95h31M49 108h38M49 121h23" />
+          <path className="motion-connection" d="M105 94h27m84 0h28m-7-5 7 5-7 5" />
+          <path className="motion-spark" d="m283 61 5 15 15 5-15 5-5 15-5-15-15-5 15-5 5-15ZM270 120h31m-31 10h22" />
+        </svg>
+        <div className="mobile-product-edge" aria-hidden="true" />
+        <img src={studySpace} alt="Protiva Android study workspace with PDF library, Nova and OCR" width={768} height={1366} fetchPriority="high" className="mobile-product-image" />
+      </div>
       <div className="premium-support-grid">
         <div className="premium-support">
           <p className="text-lg leading-relaxed text-muted-foreground">Your PDFs. Your notes. Your AI study workspace. Read, annotate, and understand your documents anywhere.</p>
@@ -31,7 +41,7 @@ export function PremiumHero() {
             <Button disabled className="store-entry" aria-label="Google Play — Coming soon"><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">App Store & Google Play · Coming soon</p>
-          <div className="mt-4 flex flex-wrap gap-3">
+          <div className="premium-actions mt-4 flex flex-wrap gap-3">
             <DownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
             <Button asChild variant="outline" className="h-12 flex-1 px-5 sm:flex-none"><a href={LINKS.webApp}>Open Web App <ArrowUpRight aria-hidden="true" /></a></Button>
           </div>
