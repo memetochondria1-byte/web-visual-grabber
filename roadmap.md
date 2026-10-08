@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Add Bengali/English reading, Li Noirrit Bengali and professional English typography; verify language switching, persistence and layout.
 - [x] Show the fourteen real features once and remove the repeated carousel and reading-tools section; verified fourteen loaded pictures, fourteen individually animated scenes, mobile scrolling, Features navigation, FAQ, 320–1920px widths, automatic reduced motion, routing test and clean build.
 - [x] Extend the overview with all omitted real app features and matching feature-specific motion graphics; verified 15 tiles covering all 14 original pictures plus OCR, loaded images, animations, tour and narrow layouts.
 - [x] Add unavailable Mac download option, remove visible Format/Platform/Version metadata and remove animation controls; verified desktop/mobile and feature navigation.
