@@ -451,14 +451,14 @@ details[open] .faq-body { grid-template-rows: 1fr; }
   .overview-nova { grid-column: 9 / 13; }
   .overview-ocr { grid-column: span 3; background: var(--accent-soft); }
   .overview-rooms { grid-column: span 5; }
-  .overview-annotation-image { width: 170px; }
+  .overview-annotation-image { width: 152px; }
   .overview-bangla-image { width: 152px; right: 20px; }
   .overview-nova-image { max-width: 215px; }
   .overview-nova .tile-document-graphic { bottom: 380px; }
   .overview-rooms-image { width: 138px; right: 22px; }
   .overview-ocr h3 { font-size: 21px; margin-top: 14px; }
   .overview-ocr p { font-size: 13px; }
-  .ocr-document-graphic { position: absolute; bottom: -4px; left: 0; width: 100%; height: 145px; }
+  .ocr-document-graphic { position: absolute; bottom: -4px; left: 0; width: 100%; height: 110px; }
 }
 @media (min-width:768px) and (max-width:1023px) {
   .premium-title { font-size: 42px; }
