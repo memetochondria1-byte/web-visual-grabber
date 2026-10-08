@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Add varied full-page document motion, stronger bento composition and compact introduction inspired by the supplied video; preserve actual app imagery, plain copy and manual carousel.
 - [x] Replace generic slogans and unsupported claims throughout the served page with plain, feature-specific copy; verified rendered text, all fourteen tour screens, routing test and clean build. Supplied app pictures remain unchanged.
 - [x] Apply selected premium editorial desktop bento with large original app image and document-line motion; verified 390–1440px layouts, image loading, tour navigation, reduced motion, unchanged mobile, routing test and clean build.
 - [x] Apply selected compact mobile editorial layout with real app picture, visible feature images and reduced-motion-safe motion graphics; verified 320–1280px layouts, overview swipe, detailed tour navigation, reduced motion, routing test and clean build.
