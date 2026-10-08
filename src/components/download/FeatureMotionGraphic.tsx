@@ -35,10 +35,12 @@ export function FeatureMotionGraphic({ index }: { index: number }) {
   return (
     <div className="tour-motion-graphic" data-motion-feature={index} aria-hidden="true">
       <svg viewBox="0 0 240 140" fill="none">
+        <g className="motion-panel-layers"><rect className="motion-panel-back" x="27" y="17" width="186" height="108" rx="4" /><rect className="motion-panel-front" x="35" y="25" width="170" height="92" rx="3" /></g>
         <g className="motion-drafting"><path d="M24 22h192M24 120h192M32 15v112M208 15v112" /><path d="M24 22h16m-8-8v16M200 120h16m-8-8v16" /></g>
         <path className="motion-plinth" d="m30 119 25 12h134l25-12-25-10H55z" />
         <g className="tour-scene">{motifs[index]}</g>
         <g className="motion-detail">{accents[index]}</g>
+        <g className="motion-calibration"><path pathLength={1} d="M20 8h50M170 132h50" /><circle cx="20" cy="8" r="2" /><circle cx="220" cy="132" r="2" /></g>
         <path className="tour-baseline" d="M24 134h192" />
       </svg>
     </div>

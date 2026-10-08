@@ -74,6 +74,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
         <FeatureBento />
 
         <section aria-label={t('Download Protiva')} className="download-motion-band bg-primary text-primary-foreground border-y">
+          <DocumentGraphic kind="connect" className="band-document-graphic" />
           <Reveal className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-center sm:flex-row sm:text-left">
             <div>
               <h2 className="text-2xl font-semibold">{t('Protiva AI for Android')}</h2>
@@ -138,7 +139,8 @@ const faqs: { q: string; a: React.ReactNode }[] = [
             </Reveal>
             <ol className="mt-12 grid gap-10 sm:grid-cols-3">
               {steps.map((s, i) => (
-                <Reveal as="li" key={s.n} delay={i * 120} className="border-t pt-6">
+                <Reveal as="li" key={s.n} delay={i * 120} className="installation-step border-t pt-6">
+                  <DocumentGraphic kind={i === 0 ? "export" : i === 1 ? "scan" : "annotate"} className="installation-step-graphic" />
                   <span className="font-mono text-sm text-accent">{language === "bn" ? s.n.replace(/\d/g, digit => "০১২৩৪৫৬৭৮৯"[Number(digit)] ?? digit) : s.n}</span>
                   <h3 className="mt-3 text-lg font-medium">{t(s.title)}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(s.body)}</p>
@@ -175,7 +177,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
       </main>
 
       <footer className="border-t">
-        <div className="mx-auto max-w-6xl px-5 py-12">
+        <Reveal className="mx-auto max-w-6xl px-5 py-12">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <Logo />
@@ -255,7 +257,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
             <p>{t('© 2026 Protiva AI. All rights reserved.')}</p>
             <p>{t('Bangladesh')}</p>
           </div>
-        </div>
+        </Reveal>
       </footer>
       </MotionPreference>
     </div>

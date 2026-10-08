@@ -29,6 +29,7 @@ export function PremiumHero() {
         <span className="premium-title-mask"><span className="premium-title-accent text-accent">{t('for Android.')}</span></span>
       </h1>
       <div className="mobile-product-stage">
+        <div className="intro-expanding-panel" aria-hidden="true"><span /><span /><span /></div>
         <DocumentGraphic kind="annotate" className="intro-document-graphic" />
         <svg className="mobile-motion-lines" viewBox="0 0 350 190" fill="none" aria-hidden="true">
           <path className="motion-document" d="M36 49h52l15 15v76H36V49Zm52 0v15h15M49 82h41M49 95h31M49 108h38M49 121h23" />
@@ -40,7 +41,7 @@ export function PremiumHero() {
       </div>
       <div className="premium-support-grid">
         <div className="premium-support">
-          <p className="text-lg leading-relaxed text-muted-foreground">{t('Read and annotate PDFs, ask Nova questions about a page, and get explanations in Bangla.')}</p>
+          <p className="intro-copy text-lg leading-relaxed text-muted-foreground">{t('Read and annotate PDFs, ask Nova questions about a page, and get explanations in Bangla.')}</p>
           <div className="mt-6 grid grid-cols-2 gap-3" aria-label={t('App stores')}>
             <Button disabled className="store-entry" aria-label={t('App Store — Link not available')}><AppleMark /><span className="store-badge-copy"><span className="store-badge-kicker">Download on the</span><span className="store-badge-name">App Store</span></span></Button>
             <Button disabled className="store-entry" aria-label={t('Google Play — Link not available')}><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>
