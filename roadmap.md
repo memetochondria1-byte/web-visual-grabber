@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Extend the overview with all omitted real app features and matching feature-specific motion graphics.
 - [x] Add unavailable Mac download option, remove visible Format/Platform/Version metadata and remove animation controls; verified desktop/mobile and feature navigation.
 - [x] Add feature-specific motion graphics to all fourteen manually navigated feature slides; verified each animated graphic, original image and automatic reduced motion.
 - [ ] Activate Mac download — awaits a compatible Mac installer or official download URL from the user.

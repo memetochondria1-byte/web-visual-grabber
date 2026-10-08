@@ -5,6 +5,30 @@ import nova from "@/assets/11-document-context.png";
 import bangla from "@/assets/10-bangla-explanations.png";
 import rooms from "@/assets/06-live-study-rooms.png";
 import { DocumentGraphic } from "./DocumentGraphic";
+import { FeatureMotionGraphic } from "./FeatureMotionGraphic";
+import home from "@/assets/02-home-and-ocr.webp";
+import signIn from "@/assets/03-sign-in.png";
+import pro from "@/assets/04-protiva-pro.png";
+import reading from "@/assets/05-continue-reading.webp";
+import meetNova from "@/assets/07-meet-nova.png";
+import conversations from "@/assets/08-nova-conversations.png";
+import sharing from "@/assets/09-share-conversations.png";
+import simpler from "@/assets/12-simpler-explanations.png";
+import exportWork from "@/assets/13-export-your-work.png";
+import tools from "@/assets/14-study-tools.png";
+
+const additionalFeatures = [
+  { index: 1, title: "Your Study Space", heading: "Open your library, Nova or OCR.", description: "Find your PDFs, conversations and text extraction tools on the home screen.", image: home },
+  { index: 2, title: "Sign In", heading: "Access your Protiva account.", description: "Sign in to your account from the Android app.", image: signIn },
+  { index: 3, title: "Protiva Pro", heading: "View the Pro plan.", description: "Check the app’s Pro screen for available plan details.", image: pro },
+  { index: 4, title: "Continue Reading", heading: "Return to a recent PDF.", description: "Reopen recently viewed documents and continue reading.", image: reading },
+  { index: 6, title: "Meet Nova", heading: "Ask about what you’re reading.", description: "Request an explanation of a passage and ask follow-up questions.", image: meetNova },
+  { index: 7, title: "Nova Conversations", heading: "Keep the conversation going.", description: "Ask for more detail or a different explanation in the same conversation.", image: conversations },
+  { index: 8, title: "Share Conversations", heading: "Share by link or QR code.", description: "Send a Nova conversation to someone else to read.", image: sharing },
+  { index: 11, title: "Simpler Explanations", heading: "Ask for simpler words.", description: "Request another explanation when a passage is hard to follow.", image: simpler },
+  { index: 12, title: "Export Your Work", heading: "Save your work in another format.", description: "Export a flattened PDF, Markdown, PDF + JSON or an .lpdf bundle.", image: exportWork },
+  { index: 13, title: "More Study Tools", heading: "Translate and study a passage.", description: "Find Lens Translator, Study Mode and mnemonic tools in the app.", image: tools },
+];
 
 export function FeatureBento() {
   return (
@@ -53,8 +77,17 @@ export function FeatureBento() {
             </div>
             <div className="overview-image overview-rooms-image"><img src={rooms} alt="Protiva live study rooms" loading="lazy" draggable={false} /></div>
           </Reveal>
+          {additionalFeatures.map((feature, index) => (
+            <Reveal as="article" key={feature.index} delay={(index % 3) * 80} className={`overview-tile overview-additional ${index % 3 === 1 ? "bg-accent-soft" : "bg-card"}`}>
+              <div className="overview-label"><FileText aria-hidden="true" /><span>{feature.title}</span></div>
+              <h3 className="mt-4 text-xl font-semibold">{feature.heading}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
+              <FeatureMotionGraphic index={feature.index} />
+              <div className="overview-image overview-additional-image"><img src={feature.image} alt={`Protiva — ${feature.title}`} loading="lazy" draggable={false} /></div>
+            </Reveal>
+          ))}
         </div>
-        <div className="mobile-overview-marker" aria-hidden="true"><span /><span /><span /><span /><span /></div>
+        <div className="mobile-overview-marker" aria-hidden="true">{Array.from({ length: 15 }, (_, index) => <span key={index} />)}</div>
         <a href="#feature-tour" className="mt-7 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">See all 14 app screens <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
       </div>
     </section>

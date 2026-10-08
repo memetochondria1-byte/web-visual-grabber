@@ -21,6 +21,7 @@
 - The introduction lives in PremiumHero as an unframed editorial masthead with CSS-only masked text and staggered entry, keeping the first screen lightweight and reduced-motion safe.
 - Official store destinations live in APP_CONFIG and store entry buttons stay unavailable until confirmed listing URLs are supplied, avoiding fabricated release availability.
 - FeatureBento presents repository app-image excerpts in a desktop grid and a native horizontal mobile overview, separate from the detailed Embla tour, so overview navigation never alters detailed feature navigation.
+- FeatureBento retains its original overview tiles and extends them with the remaining supplied app features using FeatureMotionGraphic; auto-sized additional grid rows preserve complete feature coverage without altering the detailed tour.
 - PremiumHero uses one grounded repository app picture with CSS/SVG document-line reveal, stacked on mobile and placed right of the editorial content on desktop; reduced motion renders the complete illustration without animation.
 - Decorative document graphics live in DocumentGraphic and use scoped semantic-token CSS motion across the introduction, bento and download/reading bands; app screenshots stay grounded, and reduced motion displays complete graphics without animation.
 - Automatic device motion preferences live in MotionPreference context and the root data-motion attribute without visible controls; Reveal and Embla share the preference to preserve accessible feature navigation.
