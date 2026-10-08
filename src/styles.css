@@ -74,6 +74,13 @@
   --stage-ink: color-mix(in oklch, var(--foreground) 5%, var(--background));
   --shadow-stage: 0 30px 55px -25px color-mix(in oklch, var(--foreground) 24%, transparent);
   --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --store-background: oklch(0.12 0 0);
+  --store-foreground: oklch(1 0 0);
+  --store-border: oklch(0.68 0 0);
+  --play-blue: oklch(0.65 0.18 250);
+  --play-green: oklch(0.76 0.19 150);
+  --play-red: oklch(0.61 0.23 25);
+  --play-yellow: oklch(0.85 0.17 90);
 }
 
 @layer base {
@@ -154,8 +161,23 @@ details summary::-webkit-details-marker { display: none; }
 .premium-title-accent { font-style: italic; }
 .premium-support-grid { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); margin-top: 28px; }
 .premium-support { grid-column: 7 / -1; animation: premium-enter 1s .3s var(--ease-out) both; }
-.store-entry { height: 60px; width: 100%; justify-content: flex-start; padding: 0 14px; gap: 10px; }
-.store-entry:disabled { opacity: 1; background: var(--primary); color: var(--primary-foreground); border: 1px solid var(--primary); }
+.store-entry { height: 60px; width: 100%; justify-content: flex-start; padding: 0 12px; gap: 10px; border-radius: var(--radius); }
+.store-entry:disabled { opacity: 1; background: var(--store-background); color: var(--store-foreground); border: 1px solid var(--store-border); }
+.store-mark { width: 30px; height: 36px; flex-shrink: 0; }
+.store-badge-copy { display: block; text-align: left; min-width: 0; font-family: Arial, sans-serif; }
+.store-badge-kicker { display: block; font-size: 11px; line-height: 1.25; font-weight: 400; }
+.store-badge-name { display: block; font-size: 22px; line-height: 1.1; font-weight: 500; }
+.play-blue { fill: var(--play-blue); }
+.play-green { fill: var(--play-green); }
+.play-red { fill: var(--play-red); }
+.play-yellow { fill: var(--play-yellow); }
+@media (max-width:420px) {
+  .store-entry { padding: 0 9px; gap: 7px; }
+  .store-mark { width: 25px; height: 31px; }
+  .store-badge-name { font-size: 18px; }
+  .store-badge-kicker { font-size: 10px; }
+}
+@media (max-width:359px) { .store-badge-name { font-size: 15px; } .store-badge-kicker { font-size: 9px; } .store-mark { width: 22px; } }
 .premium-footer { margin-top: 30px; animation: premium-enter 1s .45s var(--ease-out) both; }
 .premium-footer::before { content: ""; position: absolute; height: 2px; width: 48px; margin-top: -21px; background: var(--accent); transform-origin: left; animation: premium-line-enter 1.3s .5s var(--ease-out) both; }
 @keyframes premium-title-enter { from { opacity: 0; transform: translateY(110%); } to { opacity: 1; transform: none; } }

@@ -1,10 +1,14 @@
-import { Apple, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LINKS, APP_CONFIG } from "@/config/app";
 import { DownloadButton } from "./DownloadButton";
 
 function PlayMark() {
-  return <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7 shrink-0" aria-hidden="true"><path d="M3 2.8v18.4L13.1 12 3 2.8Zm1.7-.7 11.6 6.6-2.2 2.1L4.7 2.1Zm0 19.8 9.4-8.7 2.2 2.1-11.6 6.6ZM17.7 9.5 21 11.4a.7.7 0 0 1 0 1.2l-3.3 1.9-2.7-2.5 2.7-2.5Z" /></svg>;
+  return <svg viewBox="0 0 32 36" className="store-mark" aria-hidden="true"><path className="play-blue" d="M1 1.5 18 18 1 34.5Z" /><path className="play-green" d="m1 1.5 21 12-4 4.5Z" /><path className="play-red" d="m1 34.5 17-16.5 4 4.5Z" /><path className="play-yellow" d="m18 18 4-4.5 8 4.5-8 4.5Z" /></svg>;
+}
+
+function AppleMark() {
+  return <svg viewBox="0 0 24 28" fill="currentColor" className="store-mark" aria-hidden="true"><path d="M17.1 0c.2 2-.6 3.5-1.7 4.6-1.1 1.1-2.6 1.8-4.1 1.7-.2-1.9.6-3.4 1.7-4.5C14.2.7 15.8.1 17.1 0ZM21.8 20.3c-.6 1.5-.9 2.2-1.7 3.5-1.1 1.8-2.7 4-4.6 4-1.7 0-2.2-1.1-4.5-1.1-2.3 0-2.9 1.1-4.5 1.1-1.9 0-3.4-2-4.5-3.9C-1.2 18.6-.5 11 3.8 8.6c1.6-.9 3.6-1 5.3-.3 1.4.5 2.2.6 3.2.2 2.1-.9 4.4-1.2 6.2-.2 1 .5 1.8 1.2 2.4 2-3.4 1.9-3.7 6.8.9 10Z" /></svg>;
 }
 
 export function PremiumHero() {
@@ -23,9 +27,10 @@ export function PremiumHero() {
         <div className="premium-support">
           <p className="text-lg leading-relaxed text-muted-foreground">Your PDFs. Your notes. Your AI study workspace. Read, annotate, and understand your documents anywhere.</p>
           <div className="mt-6 grid grid-cols-2 gap-3" aria-label="App stores">
-            <Button disabled className="store-entry" aria-label="Google Play — Coming soon"><PlayMark /><span className="text-left"><span className="block text-[10px] font-normal">Coming soon</span><span className="block text-sm font-semibold">Google Play</span></span></Button>
-            <Button disabled className="store-entry" aria-label="App Store — Coming soon"><Apple className="h-7 w-7 shrink-0" aria-hidden="true" /><span className="text-left"><span className="block text-[10px] font-normal">Coming soon</span><span className="block text-sm font-semibold">App Store</span></span></Button>
+            <Button disabled className="store-entry" aria-label="App Store — Coming soon"><AppleMark /><span className="store-badge-copy"><span className="store-badge-kicker">Download on the</span><span className="store-badge-name">App Store</span></span></Button>
+            <Button disabled className="store-entry" aria-label="Google Play — Coming soon"><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>
           </div>
+          <p className="mt-2 text-xs text-muted-foreground">App Store & Google Play · Coming soon</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <DownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
             <Button asChild variant="outline" className="h-12 flex-1 px-5 sm:flex-none"><a href={LINKS.webApp}>Open Web App <ArrowUpRight aria-hidden="true" /></a></Button>
