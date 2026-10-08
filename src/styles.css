@@ -86,6 +86,10 @@
 }
 
 @layer base {
+  body,
+  body * {
+    font-family: "Sora", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif !important;
+  }
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
   body {
