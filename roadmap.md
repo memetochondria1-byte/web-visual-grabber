@@ -1,5 +1,5 @@
 # Tasks
-- [ ] Replace vertical feature chapters with one horizontal, hand-draggable stage matching the video; verify mouse drag, touch swipe, synchronized details and arrow navigation.
+- [x] Replace vertical feature chapters with one horizontal, hand-draggable stage; verified mouse drag, touch swipe, synchronized details, arrow navigation, final boundary, reduced motion, narrow layout and clean build.
 - [x] Apply selected kinetic feature stages with original screenshots, directional entry and unchanged palette; verified fourteen images, forward/back navigation, final boundary, narrow layout, reduced motion, routing test and clean build.
 - [x] Apply selected dimensional bento design with original colors, real app picture, layered motion and unchanged fourteen-feature tour; verified desktop/mobile, feature navigation, reduced motion, routing test and clean build.
 - [x] Show one picture per feature with text beside it on wide screens and narrative animation; verified all fourteen images, next/previous, stacked narrow layout and reduced motion.
