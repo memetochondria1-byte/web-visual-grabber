@@ -1,3 +1,4 @@
+import { useLanguage } from "./Language";
 import { useState } from "react";
 import { Download, Loader2 } from "lucide-react";
 import { APP_CONFIG } from "@/config/app";
@@ -12,6 +13,7 @@ export function DownloadButton({
   size?: "md" | "lg";
   className?: string;
 }) {
+  const { t } = useLanguage();
   const [starting, setStarting] = useState(false);
 
   return (
@@ -35,7 +37,7 @@ export function DownloadButton({
       ) : (
         <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
       )}
-      <span>{starting ? "Starting download…" : label}</span>
+      <span>{starting ? t("Starting download…") : t(label)}</span>
     </a>
   );
 }

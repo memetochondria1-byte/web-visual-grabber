@@ -1,3 +1,4 @@
+import { useLanguage } from "./Language";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LINKS } from "@/config/app";
@@ -15,16 +16,17 @@ function AppleMark() {
 }
 
 export function PremiumHero() {
+  const { t } = useLanguage();
   return (
-    <section aria-label="Protiva AI for Android" className="premium-intro mx-auto max-w-6xl border-x px-5 sm:px-10">
+    <section aria-label={t('Protiva AI for Android')} className="premium-intro mx-auto max-w-6xl border-x px-5 sm:px-10">
       <div className="premium-meta flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-        <span className="flex items-center gap-3"><span className="h-2 w-2 bg-accent" aria-hidden="true" />PDF READER & STUDY TOOLS</span>
+        <span className="flex items-center gap-3"><span className="h-2 w-2 bg-accent" aria-hidden="true" />{t('PDF READER & STUDY TOOLS')}</span>
         <span className="hidden h-px flex-1 bg-border sm:block" aria-hidden="true" />
-        <span>PROTIVA / ANDROID</span>
+        <span>{t('PROTIVA / ANDROID')}</span>
       </div>
       <h1 className="premium-title font-semibold">
-        <span className="premium-title-mask"><span>Protiva AI,</span></span>
-        <span className="premium-title-mask"><span className="premium-title-accent text-accent">for Android.</span></span>
+        <span className="premium-title-mask"><span>{t('Protiva AI,')}</span></span>
+        <span className="premium-title-mask"><span className="premium-title-accent text-accent">{t('for Android.')}</span></span>
       </h1>
       <div className="mobile-product-stage">
         <DocumentGraphic kind="annotate" className="intro-document-graphic" />
@@ -34,22 +36,22 @@ export function PremiumHero() {
           <path className="motion-spark" d="m283 61 5 15 15 5-15 5-5 15-5-15-15-5 15-5 5-15ZM270 120h31m-31 10h22" />
         </svg>
         <div className="mobile-product-edge" aria-hidden="true" />
-        <img src={studySpace} alt="Protiva Android study workspace with PDF library, Nova and OCR" width={768} height={1366} fetchPriority="high" className="mobile-product-image" />
+        <img src={studySpace} alt={t('Protiva Android study workspace with PDF library, Nova and OCR')} width={768} height={1366} fetchPriority="high" className="mobile-product-image" />
       </div>
       <div className="premium-support-grid">
         <div className="premium-support">
-          <p className="text-lg leading-relaxed text-muted-foreground">Read and annotate PDFs, ask Nova questions about a page, and get explanations in Bangla.</p>
-          <div className="mt-6 grid grid-cols-2 gap-3" aria-label="App stores">
-            <Button disabled className="store-entry" aria-label="App Store — Link not available"><AppleMark /><span className="store-badge-copy"><span className="store-badge-kicker">Download on the</span><span className="store-badge-name">App Store</span></span></Button>
-            <Button disabled className="store-entry" aria-label="Google Play — Link not available"><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>
+          <p className="text-lg leading-relaxed text-muted-foreground">{t('Read and annotate PDFs, ask Nova questions about a page, and get explanations in Bangla.')}</p>
+          <div className="mt-6 grid grid-cols-2 gap-3" aria-label={t('App stores')}>
+            <Button disabled className="store-entry" aria-label={t('App Store — Link not available')}><AppleMark /><span className="store-badge-copy"><span className="store-badge-kicker">Download on the</span><span className="store-badge-name">App Store</span></span></Button>
+            <Button disabled className="store-entry" aria-label={t('Google Play — Link not available')}><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>
           </div>
-          <p className="mt-2 text-xs text-muted-foreground">App Store and Google Play links are not available yet.</p>
+          <p className="mt-2 text-xs text-muted-foreground">{t('App Store and Google Play links are not available yet.')}</p>
           <div className="premium-actions mt-4 flex flex-wrap gap-3">
             <DownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
             <MacDownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
-            <Button asChild variant="outline" className="h-12 flex-1 px-5 sm:flex-none"><a href={LINKS.webApp}>Open Web App <ArrowUpRight aria-hidden="true" /></a></Button>
+            <Button asChild variant="outline" className="h-12 flex-1 px-5 sm:flex-none"><a href={LINKS.webApp}>{t('Open Web App')}<ArrowUpRight aria-hidden="true" /></a></Button>
           </div>
-          <p className="mt-2 text-xs text-muted-foreground">Mac download link is not available yet.</p>
+          <p className="mt-2 text-xs text-muted-foreground">{t('Mac download link is not available yet.')}</p>
         </div>
       </div>
     </section>
