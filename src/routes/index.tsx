@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, GraduationCap, HardDrive, Languages, Linkedin, Lock, PenLine, Plus, Sparkles, Target } from "lucide-react";
+import { GraduationCap, HardDrive, Languages, Linkedin, Lock, PenLine, Plus, Sparkles, Target } from "lucide-react";
 import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
