@@ -1,6 +1,6 @@
 # Tasks
 - [x] Add unavailable Mac download option, remove visible Format/Platform/Version metadata and remove animation controls; verified desktop/mobile and feature navigation.
-- [ ] Add feature-specific motion graphics to all fourteen manually navigated feature slides, keeping original images grounded.
+- [x] Add feature-specific motion graphics to all fourteen manually navigated feature slides; verified each animated graphic, original image and automatic reduced motion.
 - [ ] Activate Mac download — awaits a compatible Mac installer or official download URL from the user.
 - [x] Add a page-wide user animation control with full, reduced and off modes; verified all modes, system preference and feature navigation.
 - [ ] Redesign overall page composition, graphics and multi-stage motion to more closely match the supplied video; awaiting valid reference-faithful design previews after generated options violated the locked palette and content requirements.
