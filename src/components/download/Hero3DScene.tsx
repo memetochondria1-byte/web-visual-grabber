@@ -15,11 +15,11 @@ import reading from "@/assets/05-continue-reading.webp";
 
 const PHONE_SCREENS = [annotations, nova, bangla, home];
 const SIDE_CARDS = [
-  { src: rooms, x: -2.35, y: 0.1, z: -0.9, ry: 0.45, s: 0.85, speed: 1.2, core: true },
-  { src: simpler, x: 2.35, y: -0.05, z: -0.9, ry: -0.45, s: 0.85, speed: 1.4, core: true },
-  { src: tools, x: -3.9, y: -0.1, z: -2.4, ry: 0.6, s: 0.7, speed: 1.0, core: false },
-  { src: exportWork, x: 3.9, y: 0.15, z: -2.4, ry: -0.6, s: 0.7, speed: 1.1, core: false },
-  { src: reading, x: -1.3, y: 1.2, z: -2.2, ry: 0.25, s: 0.55, speed: 1.3, core: false },
+  { src: rooms, x: -2.0, y: 0.05, z: -0.8, ry: 0.4, s: 0.85, speed: 1.2, core: true },
+  { src: simpler, x: 2.0, y: -0.05, z: -0.8, ry: -0.4, s: 0.85, speed: 1.4, core: true },
+  { src: tools, x: -3.15, y: -0.1, z: -2.0, ry: 0.5, s: 0.62, speed: 1.0, core: false },
+  { src: exportWork, x: 3.15, y: 0.15, z: -2.0, ry: -0.5, s: 0.62, speed: 1.1, core: false },
+  { src: reading, x: -1.1, y: 0.95, z: -1.9, ry: 0.2, s: 0.5, speed: 1.3, core: false },
 ];
 
 /** Rounded rectangle geometry with UVs that cover the whole picture. */
@@ -129,7 +129,7 @@ function Cards() {
   return (
     <>
       {SIDE_CARDS.filter((c) => !compact || c.core).map((c) => (
-        <SideCard key={c.src} card={compact ? { ...c, x: c.x * 0.62, s: c.s * 0.8 } : c} />
+        <SideCard key={c.src} card={compact ? { ...c, x: Math.sign(c.x) * 1.2, s: 0.5 } : c} />
       ))}
     </>
   );
@@ -181,7 +181,7 @@ export default function Hero3DScene() {
       <Canvas
         dpr={[1, 2]}
         frameloop={visible ? "always" : "never"}
-        camera={{ position: [0, 0, 5.9], fov: 38 }}
+        camera={{ position: [0, 0, 4.6], fov: 38 }}
         gl={{ alpha: true, antialias: true }}
         style={{ background: "transparent" }}
       >
