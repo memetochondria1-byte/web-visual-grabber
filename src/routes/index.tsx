@@ -103,6 +103,16 @@ function DownloadPage() {
 
         <ScreenshotGallery />
 
+        <section aria-label="Download Protiva" className="bg-accent-soft border-y">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-center sm:flex-row sm:text-left">
+            <div>
+              <h2 className="text-2xl font-semibold">Protiva AI for Android</h2>
+              <p className="mt-2 text-sm text-muted-foreground">Your study workspace, ready to go.</p>
+            </div>
+            <DownloadButton className="w-full sm:w-auto" />
+          </div>
+        </section>
+
         {/* FEATURES */}
         <section id="features" className="scroll-mt-20 border-t bg-card/60">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">

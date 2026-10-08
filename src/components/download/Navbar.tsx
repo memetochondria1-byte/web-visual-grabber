@@ -26,7 +26,7 @@ export function Navbar() {
         </a>
         <ul className="ml-auto hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           <li><a className="transition-colors hover:text-foreground" href={LINKS.webApp}>Web App</a></li>
-          <li><a className="transition-colors hover:text-foreground" href="#features">Features</a></li>
+          <li><a className="transition-colors hover:text-foreground" href="#feature-tour">Features</a></li>
           <li><a className="transition-colors hover:text-foreground" href="#download">Download</a></li>
         </ul>
         <a
