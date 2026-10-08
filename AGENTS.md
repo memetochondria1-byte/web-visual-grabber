@@ -20,4 +20,5 @@
 - Feature slides use Embla's horizontal transitions and scoped kinetic-stage CSS for text entry; reduced-motion visitors receive instant navigation without changing the shared bento animation.
 - The introduction lives in PremiumHero as an unframed editorial masthead with CSS-only masked text and staggered entry, keeping the first screen lightweight and reduced-motion safe.
 - Official store destinations live in APP_CONFIG and store entry buttons stay unavailable until confirmed listing URLs are supplied, avoiding fabricated release availability.
-- FeatureBento presents a static overview with repository app-image excerpts, separate from the detailed swipe tour, so the overview never introduces fabricated dashboard data or alters feature navigation.
+- FeatureBento presents repository app-image excerpts in a desktop grid and a native horizontal mobile overview, separate from the detailed Embla tour, so overview navigation never alters detailed feature navigation.
+- PremiumHero uses a mobile-only grounded repository app picture and CSS/SVG document-line reveal; desktop composition stays unchanged and reduced motion renders the complete illustration without animation.

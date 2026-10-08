@@ -16,7 +16,7 @@ export function FeatureBento() {
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">Read, ask, understand and study together — without leaving your material behind.</p>
         </Reveal>
-        <div className="protiva-feature-bento">
+        <div className="protiva-feature-bento" tabIndex={0} role="region" aria-label="Protiva feature overview tiles">
           <Reveal as="article" className="overview-tile overview-annotation bg-card" delay={0}>
             <div className="overview-label"><FileText aria-hidden="true" /><span>PDF Annotations</span></div>
             <h3 className="mt-4 text-2xl font-semibold">Keep your thinking<br />on the page.</h3>
@@ -49,6 +49,7 @@ export function FeatureBento() {
             <div className="overview-image overview-rooms-image"><img src={rooms} alt="Protiva live study rooms" loading="lazy" draggable={false} /></div>
           </Reveal>
         </div>
+        <div className="mobile-overview-marker" aria-hidden="true"><span /><span /><span /><span /><span /></div>
         <a href="#feature-tour" className="mt-7 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">Inside Protiva · Explore all 14 features <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
       </div>
     </section>
