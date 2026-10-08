@@ -35,7 +35,7 @@ export function Navbar() {
           href={LINKS.webApp}
           className="hidden h-9 items-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 md:inline-flex"
         >
-          Open Protiva
+          {t("Open Protiva")}
         </a>
         <a
           href={APP_CONFIG.apkUrl}
@@ -43,7 +43,7 @@ export function Navbar() {
           aria-label={t("Download APK")}
           className="ml-auto inline-flex h-9 items-center gap-2 rounded-lg bg-primary px-3.5 text-sm font-medium text-primary-foreground md:hidden"
         >
-          <Download className="h-4 w-4" aria-hidden="true" /> Download
+          <Download className="h-4 w-4" aria-hidden="true" /> {t("Download")}
         </a>
         <LanguageSwitch />
       </nav>

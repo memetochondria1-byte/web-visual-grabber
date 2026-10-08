@@ -593,7 +593,7 @@ html[data-motion="reduced"] [data-reveal] > *, html[data-motion="off"] [data-rev
   .overview-rooms-image { top: auto; bottom: 24px; width: 110px; }
   .overview-room-copy { width: 100%; }
   .overview-rooms .tour-motion-graphic { width: 135px; left: 10px; }
-  .overview-bangla .tour-motion-graphic { width: 110px; left: 8px; bottom: 295px; }
+  .overview-bangla .tour-motion-graphic { width: 85px; left: 5px; bottom: 42px; }
   .overview-bangla-image { width: 145px; }
 }
 @media (min-width:601px) and (max-width:1023px) {
