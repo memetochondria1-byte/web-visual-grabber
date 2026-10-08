@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Add reference-inspired bento overview using only real Protiva features and original app pictures; preserve introduction and swipe tour.
 - [x] Apply selected editorial premium presentation, Sora/Manrope and masked/staggered animation with original colors; verified narrow layout, reduced motion, feature navigation and clean build.
 - [x] Add Google Play and App Store entry buttons at the start with Coming soon states.
 - [ ] Activate store buttons — awaits official Google Play and App Store listing URLs from the user.

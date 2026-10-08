@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { GraduationCap, HardDrive, Languages, Linkedin, Lock, PenLine, Plus, Sparkles, Target } from "lucide-react";
+import { HardDrive, Linkedin, Lock, Plus, Target } from "lucide-react";
 import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
@@ -8,6 +8,7 @@ import { Reveal } from "@/components/download/Reveal";
 import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
 import { PremiumHero } from "@/components/download/PremiumHero";
+import { FeatureBento } from "@/components/download/FeatureBento";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
 const DESC =
@@ -30,13 +31,6 @@ export const Route = createFileRoute("/")({
   }),
   component: DownloadPage,
 });
-
-const features = [
-  { icon: Sparkles, title: "AI-powered reading", body: "Explain difficult passages, summarize content and ask questions about your documents." },
-  { icon: PenLine, title: "Annotate freely", body: "Highlight, write notes, use bookmarks, shapes and other reading tools." },
-  { icon: GraduationCap, title: "Study smarter", body: "Generate quizzes, flashcards, mnemonics and study materials from your documents." },
-  { icon: Languages, title: "Bangla-ready", body: "Work with Bangla and English documents, including OCR and translation workflows." },
-];
 
 const steps = [
   { n: "01", title: "Download", body: "Tap Download APK and save the official Protiva APK." },
@@ -75,6 +69,8 @@ function DownloadPage() {
       <main>
         <PremiumHero />
 
+        <FeatureBento />
+
         <ScreenshotGallery />
 
         <section aria-label="Download Protiva" className="bg-accent-soft border-y">
@@ -84,30 +80,6 @@ function DownloadPage() {
               <p className="mt-2 text-sm text-muted-foreground">Your study workspace, ready to go.</p>
             </div>
             <DownloadButton className="w-full sm:w-auto" />
-          </div>
-        </section>
-
-        {/* FEATURES */}
-        <section id="features" className="scroll-mt-20 border-t bg-card/60">
-          <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-            <Reveal className="max-w-2xl">
-              <Eyebrow>Why install Protiva</Eyebrow>
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem] sm:leading-[1.1]">
-                Everything you need to understand what you read.
-              </h2>
-              <p className="mt-4 text-muted-foreground">
-                Protiva brings reading, annotation and AI-powered study tools into one focused workspace.
-              </p>
-            </Reveal>
-            <div className="mt-12 grid gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2 lg:grid-cols-4">
-              {features.map((f, i) => (
-                <Reveal as="article" key={f.title} delay={i * 90} className="group bg-background p-6 hover:bg-card">
-                  <f.icon className="h-5 w-5 text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" strokeWidth={1.6} aria-hidden="true" />
-                  <h3 className="mt-6 font-medium">{f.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 
