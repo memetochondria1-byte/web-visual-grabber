@@ -1,4 +1,5 @@
 # Tasks
+- [x] Apply selected kinetic feature stages with original screenshots, directional entry and unchanged palette; verified fourteen images, forward/back navigation, final boundary, narrow layout, reduced motion, routing test and clean build.
 - [x] Apply selected dimensional bento design with original colors, real app picture, layered motion and unchanged fourteen-feature tour; verified desktop/mobile, feature navigation, reduced motion, routing test and clean build.
 - [x] Show one picture per feature with text beside it on wide screens and narrative animation; verified all fourteen images, next/previous, stacked narrow layout and reduced motion.
 - [x] Restyle Protiva with video-inspired paired features and selected typography; preserved original light/amber colors and verified fourteen images, navigation, narrow layout and routing test.
