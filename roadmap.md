@@ -1,5 +1,5 @@
 # Tasks
-- [ ] Apply selected compact mobile editorial layout with real app picture, visible feature images and reduced-motion-safe motion graphics; preserve desktop and detailed swipe tour.
+- [x] Apply selected compact mobile editorial layout with real app picture, visible feature images and reduced-motion-safe motion graphics; verified 320–1280px layouts, overview swipe, detailed tour navigation, reduced motion, routing test and clean build.
 - [x] Add reference-inspired bento overview using only real Protiva features and original app pictures; verified five tiles, loaded pictures, narrow layout, preserved tour navigation, routing test and clean build.
 - [x] Apply selected editorial premium presentation, Sora/Manrope and masked/staggered animation with original colors; verified narrow layout, reduced motion, feature navigation and clean build.
 - [x] Add Google Play and App Store entry buttons at the start with Coming soon states.
