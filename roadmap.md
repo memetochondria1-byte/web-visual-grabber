@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Add a page-wide user animation control with full, reduced and off modes alongside the reference-driven redesign.
 - [ ] Redesign overall page composition, graphics and multi-stage motion to more closely match the supplied video; initial treatment rejected in all three areas.
 - [x] Add varied full-page document motion, stronger bento composition and compact introduction inspired by the supplied video; verified six document graphics, scan animation, five bento tiles, all fourteen carousel screens, FAQ, 320–1920px layouts, reduced motion, routing test and clean build.
 - [x] Replace generic slogans and unsupported claims throughout the served page with plain, feature-specific copy; verified rendered text, all fourteen tour screens, routing test and clean build. Supplied app pictures remain unchanged.
