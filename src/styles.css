@@ -97,10 +97,30 @@
 @utility animate-float { animation: float-y 7s ease-in-out infinite; }
 
 details summary::-webkit-details-marker { display: none; }
+.narrative-heading, .narrative-detail, .narrative-points, .narrative-picture {
+  opacity: 1;
+  transform: none;
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out), clip-path 1.1s var(--ease-out);
+}
+.narrative-detail { transition-delay: 120ms; }
+.narrative-points { transition-delay: 240ms; }
+.narrative-picture { transition-delay: 360ms; clip-path: inset(0); }
+.narrative-reveal[data-reveal="pending"] .narrative-heading,
+.narrative-reveal[data-reveal="pending"] .narrative-detail,
+.narrative-reveal[data-reveal="pending"] .narrative-points {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.narrative-reveal[data-reveal="pending"] .narrative-picture {
+  opacity: 0;
+  transform: translateY(24px);
+  clip-path: inset(6% 0 0);
+}
 details[open] .faq-icon { transform: rotate(45deg); }
 details .faq-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s var(--ease-out); }
 details[open] .faq-body { grid-template-rows: 1fr; }
 
 @media (prefers-reduced-motion: reduce) {
+  .narrative-reveal[data-reveal="pending"] > * { opacity: 1; transform: none; clip-path: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

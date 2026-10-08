@@ -6,11 +6,13 @@ export function Reveal({
   delay = 0,
   className = "",
   as: Tag = "div",
+  variant = "fade",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
   as?: "div" | "li" | "article";
+  variant?: "fade" | "narrative";
 }) {
   const ref = useRef<HTMLElement>(null);
   const [shown, setShown] = useState(true);
@@ -18,6 +20,7 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight * 0.95) return; // already on screen
     setShown(false);
@@ -37,8 +40,9 @@ export function Reveal({
   return (
     <Tag
       ref={ref as never}
+      data-reveal={shown ? "shown" : "pending"}
       style={{ transitionDelay: shown ? `${delay}ms` : "0ms" }}
-      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
+      className={variant === "narrative" ? `narrative-reveal ${className}` : `transition-all duration-700 ease-out motion-reduce:transition-none ${
         shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       } ${className}`}
     >

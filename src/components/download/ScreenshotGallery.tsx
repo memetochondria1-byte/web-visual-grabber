@@ -45,16 +45,10 @@ export function ScreenshotGallery() {
       let current = 0;
       rows.current.forEach((row, index) => {
         if (row && row.getBoundingClientRect().top <= 170) {
-          const previous = rows.current[index - 1];
-          if (!previous || Math.abs(previous.getBoundingClientRect().top - row.getBoundingClientRect().top) > 2) current = index;
+          current = index;
         }
       });
-      setActive((selected) => {
-        const selectedRow = rows.current[selected];
-        const currentRow = rows.current[current];
-        if (selectedRow && currentRow && Math.abs(selectedRow.getBoundingClientRect().top - currentRow.getBoundingClientRect().top) < 2) return selected;
-        return current;
-      });
+      setActive(current);
       frame = 0;
     };
     const onScroll = () => { if (!frame) frame = window.requestAnimationFrame(update); };
@@ -72,7 +66,9 @@ export function ScreenshotGallery() {
     const row = rows.current[index];
     if (!row) return;
     setActive(index);
-    row.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: row.getBoundingClientRect().top + window.scrollY - 144, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    });
   }
 
   return (
@@ -93,28 +89,25 @@ export function ScreenshotGallery() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5">
-        {Array.from({ length: Math.ceil(features.length / 2) }, (_, pair) => (
-          <div key={pair} className="grid gap-16 border-b py-12 last:border-b-0 sm:py-16 md:grid-cols-2 md:gap-16 lg:gap-24">
-          {features.slice(pair * 2, pair * 2 + 2).map((feature, offset) => {
-            const index = pair * 2 + offset;
-            return (
-          <article key={feature.title} data-feature-index={index} ref={(element) => { rows.current[index] = element; }} aria-labelledby={`feature-title-${index}`} className="feature-chapter flex scroll-mt-36 flex-col">
-            <Reveal className="mx-auto w-full max-w-md flex-1 pb-8 text-center">
-              <p className="font-mono text-xs text-accent">{String(index + 1).padStart(2, "0")} / 14 · {feature.category}</p>
-              <h3 id={`feature-title-${index}`} className="mt-3 text-2xl font-semibold sm:text-3xl">{feature.title}</h3>
-              <p className="mt-3 font-medium">{feature.description}</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{feature.detail}</p>
-              <ul className="mx-auto mt-5 w-fit space-y-2 text-left">
+        {features.map((feature, index) => (
+          <article key={feature.title} data-feature-index={index} ref={(element) => { rows.current[index] = element; }} aria-labelledby={`feature-title-${index}`} className="feature-chapter scroll-mt-36 border-b py-16 last:border-b-0 sm:py-20">
+            <Reveal variant="narrative" className="grid items-center gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
+              <div className="narrative-picture mx-auto w-full max-w-[340px] overflow-hidden rounded-lg sm:max-w-[380px]">
+                <img src={feature.src} alt={`Protiva — ${feature.title}`} width={768} height={1366} loading={index === 0 ? "eager" : "lazy"} decoding="async" className="aspect-[768/1366] w-full object-contain" />
+              </div>
+              <div className="min-w-0">
+              <header className="narrative-heading mb-8 w-full">
+                <p className="font-mono text-xs text-accent">{String(index + 1).padStart(2, "0")} / 14 · {feature.category}</p>
+                <h3 id={`feature-title-${index}`} className="mt-4 text-3xl font-semibold sm:text-4xl">{feature.title}</h3>
+                <p className="mt-3 text-xl font-medium">{feature.description}</p>
+              </header>
+              <p className="narrative-detail max-w-2xl leading-relaxed text-muted-foreground">{feature.detail}</p>
+              <ul className="narrative-points mt-8 w-fit space-y-3 text-left">
                 {feature.points.map((point) => <li key={point} className="flex items-start gap-3 text-sm leading-relaxed"><Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />{point}</li>)}
               </ul>
+              </div>
             </Reveal>
-            <div className="flex justify-center">
-              <img src={feature.src} alt={`Protiva — ${feature.title}`} width={768} height={1366} loading={index < 2 ? "eager" : "lazy"} decoding="async" className="aspect-[768/1366] w-full max-w-[320px] rounded-lg object-contain sm:max-w-[340px]" />
-            </div>
           </article>
-            );
-          })}
-          </div>
         ))}
       </div>
     </section>
