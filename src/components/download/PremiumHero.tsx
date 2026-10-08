@@ -1,9 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LINKS, APP_CONFIG } from "@/config/app";
+import { LINKS } from "@/config/app";
 import { DownloadButton } from "./DownloadButton";
 import studySpace from "@/assets/02-home-and-ocr.webp";
 import { DocumentGraphic } from "./DocumentGraphic";
+import { MacDownloadButton } from "./MacDownloadButton";
 
 function PlayMark() {
   return <svg viewBox="0 0 32 36" className="store-mark" aria-hidden="true"><path className="play-blue" d="M1 1.5 18 18 1 34.5Z" /><path className="play-green" d="m1 1.5 21 12-4 4.5Z" /><path className="play-red" d="m1 34.5 17-16.5 4 4.5Z" /><path className="play-yellow" d="m18 18 4-4.5 8 4.5-8 4.5Z" /></svg>;
@@ -45,14 +46,11 @@ export function PremiumHero() {
           <p className="mt-2 text-xs text-muted-foreground">App Store and Google Play links are not available yet.</p>
           <div className="premium-actions mt-4 flex flex-wrap gap-3">
             <DownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
+            <MacDownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
             <Button asChild variant="outline" className="h-12 flex-1 px-5 sm:flex-none"><a href={LINKS.webApp}>Open Web App <ArrowUpRight aria-hidden="true" /></a></Button>
           </div>
+          <p className="mt-2 text-xs text-muted-foreground">Mac download link is not available yet.</p>
         </div>
-      </div>
-      <div className="premium-footer flex flex-wrap gap-x-12 gap-y-5 border-t pt-5 pb-7 text-xs">
-        <div><span className="mb-1 block text-[10px] text-muted-foreground">FORMAT</span>Android Package (APK)</div>
-        <div><span className="mb-1 block text-[10px] text-muted-foreground">PLATFORM</span>Android</div>
-        <div><span className="mb-1 block text-[10px] text-muted-foreground">VERSION</span>{APP_CONFIG.version}</div>
       </div>
     </section>
   );

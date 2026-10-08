@@ -11,6 +11,7 @@ import { PremiumHero } from "@/components/download/PremiumHero";
 import { FeatureBento } from "@/components/download/FeatureBento";
 import { DocumentGraphic } from "@/components/download/DocumentGraphic";
 import { MotionPreference } from "@/components/download/MotionPreference";
+import { MacDownloadButton } from "@/components/download/MacDownloadButton";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
 const DESC =
@@ -96,16 +97,16 @@ function DownloadPage() {
                   Install the Android app to read PDFs, annotate pages and use Nova.
                 </p>
                 <DownloadButton label="Download Protiva for Android" size="lg" className="mt-8 w-full sm:w-auto" />
+                <MacDownloadButton className="mt-3 w-full sm:ml-3 sm:w-auto" />
+                <p className="mt-2 text-xs text-muted-foreground">Mac download link is not available yet.</p>
                 <p className="mt-3 font-mono text-xs text-muted-foreground">Android installation file · APK</p>
                 <DocumentGraphic kind="export" className="download-document-graphic" />
               </div>
               <div className="flex flex-col gap-4">
                 <dl className="divide-y rounded-xl border bg-background font-mono text-sm">
                   {[
-                    ["Version", APP_CONFIG.version],
                     ["Updated", APP_CONFIG.releaseDate],
                     ["File size", APP_CONFIG.fileSize],
-                    ["Platform", "Android"],
                   ].map(([k, v]) => (
                     <div key={k} className="flex items-center justify-between px-5 py-3.5">
                       <dt className="text-muted-foreground">{k}</dt>
