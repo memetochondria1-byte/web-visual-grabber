@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Replace floating 3D pictures and carousel with fourteen detailed sequential scroll features and restrained animation; verify navigation and images.
 - [x] Add all nine uploaded pictures to the download page.
 - [x] Check website visibility: the page opens successfully with no browser errors; no website failure reproduced.
 - [x] Strip origin branding from the repository: readme, project notes, site icon, picture hosting, error-helper name.
