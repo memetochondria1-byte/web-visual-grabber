@@ -4,6 +4,7 @@ import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
 import { DownloadButton } from "@/components/download/DownloadButton";
+import { Reveal } from "@/components/download/Reveal";
 import { Hero3D } from "@/components/download/Hero3D";
 import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
@@ -111,7 +112,7 @@ function DownloadPage() {
         {/* FEATURES */}
         <section id="features" className="scroll-mt-20 border-t bg-card/60">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-            <div className="max-w-2xl">
+            <Reveal className="max-w-2xl">
               <Eyebrow>Why install Protiva</Eyebrow>
               <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem] sm:leading-[1.1]">
                 Everything you need to understand what you read.
@@ -119,14 +120,14 @@ function DownloadPage() {
               <p className="mt-4 text-muted-foreground">
                 Protiva brings reading, annotation and AI-powered study tools into one focused workspace.
               </p>
-            </div>
+            </Reveal>
             <div className="mt-12 grid gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2 lg:grid-cols-4">
-              {features.map((f) => (
-                <article key={f.title} className="bg-background p-6 transition-colors hover:bg-card">
-                  <f.icon className="h-5 w-5 text-accent" strokeWidth={1.6} aria-hidden="true" />
+              {features.map((f, i) => (
+                <Reveal as="article" key={f.title} delay={i * 90} className="group bg-background p-6 hover:bg-card">
+                  <f.icon className="h-5 w-5 text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" strokeWidth={1.6} aria-hidden="true" />
                   <h3 className="mt-6 font-medium">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
-                </article>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -135,7 +136,7 @@ function DownloadPage() {
         {/* CTA */}
         <section id="download" className="scroll-mt-20 border-t">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-            <div className="grid items-center gap-10 rounded-2xl border bg-card p-8 shadow-soft sm:p-12 lg:grid-cols-[1.4fr_1fr]">
+            <Reveal className="grid items-center gap-10 rounded-2xl border bg-card p-8 shadow-soft sm:p-12 lg:grid-cols-[1.4fr_1fr]">
               <div>
                 <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Ready to read smarter?</h2>
                 <p className="mt-4 max-w-md text-muted-foreground">
@@ -173,22 +174,24 @@ function DownloadPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* INSTALL */}
         <section className="border-t bg-card/60">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-            <Eyebrow>Installation</Eyebrow>
-            <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">How to install</h2>
+            <Reveal>
+              <Eyebrow>Installation</Eyebrow>
+              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">How to install</h2>
+            </Reveal>
             <ol className="mt-12 grid gap-10 sm:grid-cols-3">
-              {steps.map((s) => (
-                <li key={s.n} className="border-t pt-6">
+              {steps.map((s, i) => (
+                <Reveal as="li" key={s.n} delay={i * 120} className="border-t pt-6">
                   <span className="font-mono text-sm text-accent">{s.n}</span>
                   <h3 className="mt-3 text-lg font-medium">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-                </li>
+                </Reveal>
               ))}
             </ol>
           </div>
@@ -197,22 +200,22 @@ function DownloadPage() {
         {/* TRUST */}
         <section className="border-t">
           <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-28 lg:grid-cols-2">
-            <div>
+            <Reveal>
               <Eyebrow>Privacy</Eyebrow>
               <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Built around your reading.</h2>
               <p className="mt-5 max-w-lg leading-relaxed text-muted-foreground">
                 Protiva is designed around privacy and focused reading. Your documents can stay on your device during normal local-first workflows, while AI features only send the information required for the specific AI request.
               </p>
-            </div>
+            </Reveal>
             <ul className="space-y-3">
-              {trust.map((t) => (
-                <li key={t.title} className="flex gap-4 rounded-xl border bg-card p-5">
+              {trust.map((t, i) => (
+                <Reveal as="li" key={t.title} delay={i * 100} className="flex gap-4 rounded-xl border bg-card p-5 hover:-translate-y-0.5 hover:shadow-soft">
                   <t.icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.6} aria-hidden="true" />
                   <div>
                     <h3 className="font-medium">{t.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{t.body}</p>
                   </div>
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
@@ -221,9 +224,11 @@ function DownloadPage() {
         {/* FAQ */}
         <section className="border-t bg-card/60">
           <div className="mx-auto max-w-3xl px-5 py-20 sm:py-28">
-            <Eyebrow>FAQ</Eyebrow>
-            <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Questions, answered.</h2>
-            <div className="mt-10 divide-y border-y">
+            <Reveal>
+              <Eyebrow>FAQ</Eyebrow>
+              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Questions, answered.</h2>
+            </Reveal>
+            <Reveal className="mt-10 divide-y border-y">
               {faqs.map((f) => (
                 <details key={f.q} className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium">
@@ -237,7 +242,7 @@ function DownloadPage() {
                   </div>
                 </details>
               ))}
-            </div>
+            </Reveal>
           </div>
         </section>
       </main>
