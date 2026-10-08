@@ -1,10 +1,11 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "@fontsource/ibm-plex-sans/400.css";
-@import "@fontsource/ibm-plex-sans/500.css";
-@import "@fontsource/ibm-plex-sans/600.css";
-@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/sora/400.css";
+@import "@fontsource/sora/500.css";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/sora/700.css";
+@import "@fontsource/sora/800.css";
 @import "@fontsource/noto-sans-bengali/400.css";
 @import "@fontsource/noto-sans-bengali/500.css";
 @import "@fontsource/noto-sans-bengali/600.css";
@@ -12,8 +13,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -100,10 +101,10 @@
 
 /* Noirrit is used only when locally installed until web-distribution permission is supplied. */
 html[lang="bn"] {
-  --font-sans: "Li Ador Noirrit", "Li Ador Noirrit Unicode", "Li Noirrit", "Noto Sans Bengali", sans-serif;
+  --font-sans: "Sora", "Noto Sans Bengali", sans-serif;
   --font-display: var(--font-sans);
 }
-[lang="bn"] { font-family: "Li Ador Noirrit", "Li Ador Noirrit Unicode", "Li Noirrit", "Noto Sans Bengali", sans-serif; }
+[lang="bn"] { font-family: "Sora", "Noto Sans Bengali", sans-serif; }
 .language-switch { border-radius: var(--radius); padding: 2px; }
 .language-switch button { min-width: 38px; padding-inline: 8px; border-radius: calc(var(--radius) - 2px); }
 .language-switch button[aria-pressed="true"] { background: var(--primary); color: var(--primary-foreground); }
