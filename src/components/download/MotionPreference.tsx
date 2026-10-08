@@ -21,8 +21,8 @@ export function MotionPreference({ children }: { children: React.ReactNode }) {
   }, [chosen]);
 
   useEffect(() => {
-    document.documentElement.dataset.motion = mode;
-    return () => { delete document.documentElement.dataset.motion; };
+    document.documentElement.dataset["motion"] = mode;
+    return () => { delete document.documentElement.dataset["motion"]; };
   }, [mode]);
 
   return (
