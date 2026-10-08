@@ -22,8 +22,8 @@ export function Reveal({
     if (rect.top < window.innerHeight * 0.95) return; // already on screen
     setShown(false);
     const io = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
           setShown(true);
           io.disconnect();
         }
