@@ -13,7 +13,7 @@ import exportWork from "@/assets/13-export-your-work.png";
 import tools from "@/assets/14-study-tools.png";
 import reading from "@/assets/05-continue-reading.webp";
 
-const PHONE_SCREENS = [annotations, nova, bangla, home];
+const PHONE_SCREENS: string[] = [annotations, nova, bangla, home];
 const SIDE_CARDS = [
   { src: rooms, x: -2.0, y: 0.05, z: -0.8, ry: 0.4, s: 0.85, speed: 1.2, core: true },
   { src: simpler, x: 2.0, y: -0.05, z: -0.8, ry: -0.4, s: 0.85, speed: 1.4, core: true },
@@ -37,8 +37,8 @@ function roundedRectGeometry(w: number, h: number, r: number) {
   shape.lineTo(x, y + r);
   shape.quadraticCurveTo(x, y, x + r, y);
   const geo = new THREE.ShapeGeometry(shape, 10);
-  const pos = geo.attributes.position;
-  const uv = geo.attributes.uv;
+  const pos = geo.attributes.position as THREE.BufferAttribute;
+  const uv = geo.attributes.uv as THREE.BufferAttribute;
   for (let i = 0; i < pos.count; i++) {
     uv.setXY(i, (pos.getX(i) + w / 2) / w, (pos.getY(i) + h / 2) / h);
   }
@@ -95,7 +95,7 @@ function Phone({ pointer }: { pointer: React.MutableRefObject<THREE.Vector2> }) 
         </mesh>
         <group position={[0, 0, 0.056]}>
           <Suspense fallback={null}>
-            <Screen key={PHONE_SCREENS[idx]} src={PHONE_SCREENS[idx]} width={1.0} radius={0.1} />
+            <Screen key={idx} src={PHONE_SCREENS[idx] ?? annotations} width={1.0} radius={0.1} />
           </Suspense>
         </group>
         {/* camera dot */}
@@ -161,7 +161,7 @@ export default function Hero3DScene() {
   useEffect(() => {
     const el = wrap.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), { rootMargin: "100px" });
+    const io = new IntersectionObserver((entries) => setVisible(entries[0]?.isIntersecting ?? true), { rootMargin: "100px" });
     io.observe(el);
     return () => io.disconnect();
   }, []);
