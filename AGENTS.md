@@ -27,3 +27,6 @@
 - Automatic device motion preferences live in MotionPreference context and the root data-motion attribute without visible controls; Reveal and decorative graphics respect the same preference.
 - Mac installer destinations live in APP_CONFIG and MacDownloadButton stays unavailable without a confirmed compatible download, preventing mislabeled Windows files and broken links.
 - Every overview tile mounts a feature-specific FeatureMotionGraphic scene with scoped tool, scan, connection or text motion; only decorative SVG elements animate, and reduced motion leaves complete illustrations visible.
+
+- Decorative pointer responses use useGraphicInteraction on Reveal and the introduction; CSS coordinate variables move only SVG ink, preserving grounded screenshots and native touch scrolling.
+- The native mobile feature strip includes accessible previous/next buttons and a position counter; navigation scrolls the existing fourteen tiles instead of duplicating screens.

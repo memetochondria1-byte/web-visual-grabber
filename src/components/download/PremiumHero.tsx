@@ -6,6 +6,7 @@ import { DownloadButton } from "./DownloadButton";
 import studySpace from "@/assets/02-home-and-ocr.webp";
 import { DocumentGraphic } from "./DocumentGraphic";
 import { MacDownloadButton } from "./MacDownloadButton";
+import { useGraphicInteraction } from "@/hooks/use-graphic-interaction";
 
 function PlayMark() {
   return <svg viewBox="0 0 32 36" className="store-mark" aria-hidden="true"><path className="play-blue" d="M1 1.5 18 18 1 34.5Z" /><path className="play-green" d="m1 1.5 21 12-4 4.5Z" /><path className="play-red" d="m1 34.5 17-16.5 4 4.5Z" /><path className="play-yellow" d="m18 18 4-4.5 8 4.5-8 4.5Z" /></svg>;
@@ -17,6 +18,7 @@ function AppleMark() {
 
 export function PremiumHero() {
   const { t } = useLanguage();
+  const interaction = useGraphicInteraction();
   return (
     <section aria-label={t('Protiva AI for Android')} className="premium-intro mx-auto max-w-6xl border-x px-5 sm:px-10">
       <div className="premium-meta flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
@@ -28,7 +30,7 @@ export function PremiumHero() {
         <span className="premium-title-mask"><span>{t('Protiva AI,')}</span></span>
         <span className="premium-title-mask"><span className="premium-title-accent text-accent">{t('for Android.')}</span></span>
       </h1>
-      <div className="mobile-product-stage">
+      <div className="mobile-product-stage" {...interaction}>
         <div className="intro-expanding-panel" aria-hidden="true"><span /><span /><span /></div>
         <DocumentGraphic kind="annotate" className="intro-document-graphic" />
         <svg className="mobile-motion-lines" viewBox="0 0 350 190" fill="none" aria-hidden="true">
@@ -41,7 +43,7 @@ export function PremiumHero() {
       </div>
       <div className="premium-support-grid">
         <div className="premium-support">
-          <p className="intro-copy text-lg leading-relaxed text-muted-foreground">{t('Read and annotate PDFs, ask Nova questions about a page, and get explanations in Bangla.')}</p>
+          <p className="intro-copy text-lg leading-relaxed text-muted-foreground">{t('Read PDFs, write notes and ask Nova for explanations in Bangla.')}</p>
           <div className="mt-6 grid grid-cols-2 gap-3" aria-label={t('App stores')}>
             <Button disabled className="store-entry" aria-label={t('App Store — Link not available')}><AppleMark /><span className="store-badge-copy"><span className="store-badge-kicker">Download on the</span><span className="store-badge-name">App Store</span></span></Button>
             <Button disabled className="store-entry" aria-label={t('Google Play — Link not available')}><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useMotionPreference } from "./MotionPreference";
+import { useGraphicInteraction } from "@/hooks/use-graphic-interaction";
 
 /** Viewport-aware choreography; server-rendered content remains visible without JS. */
 export function Reveal({
@@ -19,6 +20,7 @@ export function Reveal({
   const [shown, setShown] = useState(true);
   const [visible, setVisible] = useState(true);
   const motion = useMotionPreference();
+  const interaction = useGraphicInteraction();
 
   useEffect(() => {
     const el = ref.current;
@@ -42,6 +44,7 @@ export function Reveal({
 
   return (
     <Tag
+      {...interaction}
       ref={ref as never}
       data-reveal={shown ? "shown" : "pending"}
       data-visible={visible ? "true" : "false"}

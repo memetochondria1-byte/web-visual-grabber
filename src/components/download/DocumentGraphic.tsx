@@ -8,6 +8,7 @@ export function DocumentGraphic({ kind = "annotate", className = "" }: { kind?: 
         <path className="graphic-back" d="m78 52 158-22 35 160-158 22Z" />
         <path className="graphic-middle" d="m91 39 159-10 10 170-159 10Z" />
         <path className="graphic-paper" d="M110 25h123l25 25v164H110V25Z" />
+        <g className="graphic-registration"><path d="M86 31V12h28M246 12h28v19M86 207v19h28M246 226h28v-19" /><path className="graphic-flow" d="M23 121h65m190 0h59" /></g>
         <path className="graphic-fold" d="M233 25v25h25" />
         <path className="graphic-lines" d="M130 73h105M130 91h87M130 109h105M130 127h75M130 163h105M130 181h68" />
         {kind === "annotate" && <>
