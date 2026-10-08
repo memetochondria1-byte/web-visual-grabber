@@ -9,6 +9,7 @@ import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
 import { PremiumHero } from "@/components/download/PremiumHero";
 import { FeatureBento } from "@/components/download/FeatureBento";
+import { DocumentGraphic } from "@/components/download/DocumentGraphic";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
 const DESC =
@@ -64,7 +65,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 function DownloadPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen motion-page">
       <Navbar />
       <main>
         <PremiumHero />
@@ -73,20 +74,20 @@ function DownloadPage() {
 
         <ScreenshotGallery />
 
-        <section aria-label="Download Protiva" className="bg-accent-soft border-y">
-          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-center sm:flex-row sm:text-left">
+        <section aria-label="Download Protiva" className="download-motion-band bg-primary text-primary-foreground border-y">
+          <Reveal className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-center sm:flex-row sm:text-left">
             <div>
               <h2 className="text-2xl font-semibold">Protiva AI for Android</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Read PDFs, add notes and ask Nova about your documents.</p>
+              <p className="mt-2 text-sm text-primary-foreground/75">Read PDFs, add notes and ask Nova about your documents.</p>
             </div>
             <DownloadButton className="w-full sm:w-auto" />
-          </div>
+          </Reveal>
         </section>
 
         {/* CTA */}
         <section id="download" className="scroll-mt-20 border-t">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-            <Reveal className="grid items-center gap-10 rounded-2xl border bg-card p-8 shadow-soft sm:p-12 lg:grid-cols-[1.4fr_1fr]">
+            <Reveal className="download-editorial grid items-center gap-10 py-8 sm:py-12 lg:grid-cols-[1.4fr_1fr]">
               <div>
                 <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Download Protiva for Android</h2>
                 <p className="mt-4 max-w-md text-muted-foreground">
@@ -94,6 +95,7 @@ function DownloadPage() {
                 </p>
                 <DownloadButton label="Download Protiva for Android" size="lg" className="mt-8 w-full sm:w-auto" />
                 <p className="mt-3 font-mono text-xs text-muted-foreground">Android installation file · APK</p>
+                <DocumentGraphic kind="export" className="download-document-graphic" />
               </div>
               <div className="flex flex-col gap-4">
                 <dl className="divide-y rounded-xl border bg-background font-mono text-sm">
@@ -129,7 +131,7 @@ function DownloadPage() {
         </section>
 
         {/* INSTALL */}
-        <section className="border-t bg-card/60">
+        <section className="installation-motion border-t bg-card/60">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
             <Reveal>
               <Eyebrow>Installation</Eyebrow>
@@ -148,7 +150,7 @@ function DownloadPage() {
         </section>
 
         {/* TRUST */}
-        <section className="border-t">
+        <section className="reading-motion border-t">
           <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-28 lg:grid-cols-2">
             <Reveal>
               <Eyebrow>Reading & study</Eyebrow>
@@ -156,6 +158,7 @@ function DownloadPage() {
               <p className="mt-5 max-w-lg leading-relaxed text-muted-foreground">
                 Annotate a page as you read, ask for an explanation in Bangla, or join others in a live study room.
               </p>
+              <DocumentGraphic kind="connect" className="reading-document-graphic" />
             </Reveal>
             <ul className="space-y-3">
               {readingTools.map((t, i) => (

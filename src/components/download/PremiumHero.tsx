@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { LINKS, APP_CONFIG } from "@/config/app";
 import { DownloadButton } from "./DownloadButton";
 import studySpace from "@/assets/02-home-and-ocr.webp";
+import { DocumentGraphic } from "./DocumentGraphic";
 
 function PlayMark() {
   return <svg viewBox="0 0 32 36" className="store-mark" aria-hidden="true"><path className="play-blue" d="M1 1.5 18 18 1 34.5Z" /><path className="play-green" d="m1 1.5 21 12-4 4.5Z" /><path className="play-red" d="m1 34.5 17-16.5 4 4.5Z" /><path className="play-yellow" d="m18 18 4-4.5 8 4.5-8 4.5Z" /></svg>;
@@ -25,6 +26,7 @@ export function PremiumHero() {
         <span className="premium-title-mask"><span className="premium-title-accent text-accent">for Android.</span></span>
       </h1>
       <div className="mobile-product-stage">
+        <DocumentGraphic kind="annotate" className="intro-document-graphic" />
         <svg className="mobile-motion-lines" viewBox="0 0 350 190" fill="none" aria-hidden="true">
           <path className="motion-document" d="M36 49h52l15 15v76H36V49Zm52 0v15h15M49 82h41M49 95h31M49 108h38M49 121h23" />
           <path className="motion-connection" d="M105 94h27m84 0h28m-7-5 7 5-7 5" />
