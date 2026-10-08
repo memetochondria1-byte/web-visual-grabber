@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Protiva AI" },
-      { name: "description", content: "Protiva — your thinking workspace for documents." },
+      { name: "description", content: "Read and annotate PDFs, ask Nova questions, and get explanations in Bangla with Protiva." },
       { name: "author", content: "Protiva AI" },
       { name: "theme-color", content: "#FAF9F6" },
     ],

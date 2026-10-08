@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { HardDrive, Linkedin, Lock, Plus, Target } from "lucide-react";
+import { FileText, Languages, Linkedin, Plus, Users } from "lucide-react";
 import { APP_CONFIG, LINKS } from "@/config/app";
 import protivaQr from "@/assets/protiva-qr.jpg";
 import { Navbar } from "@/components/download/Navbar";
@@ -12,7 +12,7 @@ import { FeatureBento } from "@/components/download/FeatureBento";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
 const DESC =
-  "Download the official Protiva AI Android app. Read, annotate, study and understand your PDFs with AI-powered tools.";
+  "Protiva AI for Android: read and annotate PDFs, ask Nova about your documents, and get page explanations in Bangla.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,27 +33,27 @@ export const Route = createFileRoute("/")({
 });
 
 const steps = [
-  { n: "01", title: "Download", body: "Tap Download APK and save the official Protiva APK." },
+  { n: "01", title: "Download", body: "Tap Download APK to save the Android installation file." },
   { n: "02", title: "Install", body: "Open the downloaded APK and follow Android's installation instructions." },
-  { n: "03", title: "Start reading", body: "Open Protiva and start working with your documents." },
+  { n: "03", title: "Start reading", body: "Open Protiva and choose a PDF from your library." },
 ];
 
-const trust = [
-  { icon: HardDrive, title: "Local-first", body: "Your reading workspace is designed around on-device storage." },
-  { icon: Lock, title: "Private by design", body: "Your documents aren't treated like generic cloud content." },
-  { icon: Target, title: "No unnecessary clutter", body: "A focused workspace for reading and thinking." },
+const readingTools = [
+  { icon: FileText, title: "PDF annotations", body: "Highlight passages and add handwritten notes to the page." },
+  { icon: Languages, title: "Bangla explanations", body: "Read a page explanation alongside the original PDF." },
+  { icon: Users, title: "Live study rooms", body: "Join a group study session in the app." },
 ];
 
 const faqs: { q: string; a: React.ReactNode }[] = [
-  { q: "Is this the official Protiva Android app?", a: "Yes. This page is the official Protiva download page and provides the official APK release." },
-  { q: "Is the APK free to download?", a: "The APK download itself is available from this page. Access to specific Protiva features may depend on the current product plan." },
+  { q: "Is this the official Protiva Android app?", a: "Yes. This is the Protiva Android download page." },
+  { q: "Where can I find Protiva Pro?", a: "Open the Protiva Pro screen in the app to check the plan details." },
   {
     q: "What Android devices are supported?",
     a: APP_CONFIG.minAndroid === "—"
       ? "The minimum supported Android version will be listed here alongside each release."
       : `Protiva for Android requires Android ${APP_CONFIG.minAndroid} or later.`,
   },
-  { q: "Can I use Protiva without an account?", a: "Protiva is free to start, and your documents are stored locally on your device. Some features, such as AI tools and live group study, may require signing in." },
+  { q: "How do I ask Nova about a PDF?", a: "Open a Nova conversation and include your PDF using document context. Then ask about the page or passage you are reading." },
   { q: "Where can I use Protiva?", a: <>On Android with this app, and in any modern browser at <a className="underline underline-offset-4 hover:text-foreground" href={LINKS.webApp}>protiva.me</a>.</> },
   { q: "Where can I get support?", a: <>Reach the team through the <a className="underline underline-offset-4 hover:text-foreground" href={LINKS.contact}>Protiva contact page</a>.</> },
 ];
@@ -77,7 +77,7 @@ function DownloadPage() {
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-center sm:flex-row sm:text-left">
             <div>
               <h2 className="text-2xl font-semibold">Protiva AI for Android</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Your study workspace, ready to go.</p>
+              <p className="mt-2 text-sm text-muted-foreground">Read PDFs, add notes and ask Nova about your documents.</p>
             </div>
             <DownloadButton className="w-full sm:w-auto" />
           </div>
@@ -88,12 +88,12 @@ function DownloadPage() {
           <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
             <Reveal className="grid items-center gap-10 rounded-2xl border bg-card p-8 shadow-soft sm:p-12 lg:grid-cols-[1.4fr_1fr]">
               <div>
-                <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Ready to read smarter?</h2>
+                <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Download Protiva for Android</h2>
                 <p className="mt-4 max-w-md text-muted-foreground">
-                  Install Protiva AI on Android and turn your phone into a focused thinking and study workspace.
+                  Install the Android app to read PDFs, annotate pages and use Nova.
                 </p>
                 <DownloadButton label="Download Protiva for Android" size="lg" className="mt-8 w-full sm:w-auto" />
-                <p className="mt-3 font-mono text-xs text-muted-foreground">APK · Official release</p>
+                <p className="mt-3 font-mono text-xs text-muted-foreground">Android installation file · APK</p>
               </div>
               <div className="flex flex-col gap-4">
                 <dl className="divide-y rounded-xl border bg-background font-mono text-sm">
@@ -151,14 +151,14 @@ function DownloadPage() {
         <section className="border-t">
           <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-28 lg:grid-cols-2">
             <Reveal>
-              <Eyebrow>Privacy</Eyebrow>
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Built around your reading.</h2>
+              <Eyebrow>Reading & study</Eyebrow>
+              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Tools for your PDFs.</h2>
               <p className="mt-5 max-w-lg leading-relaxed text-muted-foreground">
-                Protiva is designed around privacy and focused reading. Your documents can stay on your device during normal local-first workflows, while AI features only send the information required for the specific AI request.
+                Annotate a page as you read, ask for an explanation in Bangla, or join others in a live study room.
               </p>
             </Reveal>
             <ul className="space-y-3">
-              {trust.map((t, i) => (
+              {readingTools.map((t, i) => (
                 <Reveal as="li" key={t.title} delay={i * 100} className="flex gap-4 rounded-xl border bg-card p-5 hover:-translate-y-0.5 hover:shadow-soft">
                   <t.icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.6} aria-hidden="true" />
                   <div>
@@ -176,7 +176,7 @@ function DownloadPage() {
           <div className="mx-auto max-w-3xl px-5 py-20 sm:py-28">
             <Reveal>
               <Eyebrow>FAQ</Eyebrow>
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Questions, answered.</h2>
+              <h2 className="text-3xl font-semibold tracking-[-0.025em] sm:text-[2.6rem]">Common questions</h2>
             </Reveal>
             <Reveal className="mt-10 divide-y border-y">
               {faqs.map((f) => (
@@ -202,7 +202,7 @@ function DownloadPage() {
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <Logo />
-              <p className="mt-3 text-sm text-muted-foreground">Read deeper. Think clearer.</p>
+              <p className="mt-3 text-sm text-muted-foreground">PDF reading, annotations and Nova.</p>
               <a
                 href="https://www.linkedin.com/company/protiva-ai"
                 target="_blank"
@@ -276,7 +276,7 @@ function DownloadPage() {
           </div>
           <div className="mt-10 flex flex-col gap-2 border-t pt-6 text-xs text-muted-foreground sm:flex-row sm:justify-between">
             <p>© 2026 Protiva AI. All rights reserved.</p>
-            <p>Made with care in Bangladesh.</p>
+            <p>Bangladesh</p>
           </div>
         </div>
       </footer>
