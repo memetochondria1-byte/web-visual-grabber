@@ -18,6 +18,7 @@
 
 - The download page does not mount the legacy screenshot carousel or WebGL showcase, keeping the feature presentation direct and lightweight.
 - Scroll fade-ins use `src/components/download/Reveal.tsx`; content stays visible if scripting is unavailable.
+- Page choreography uses viewport-aware kinetic Reveal states and scoped CSS panel construction; offscreen decorative motion pauses to avoid wasted work while pictures stay grounded.
 - The introduction lives in PremiumHero as an unframed editorial masthead with CSS-only masked text and staggered entry, keeping the first screen lightweight and reduced-motion safe.
 - Official store destinations live in APP_CONFIG and store entry buttons stay unavailable until confirmed listing URLs are supplied, avoiding fabricated release availability.
 - FeatureBento uses a desktop grid and native horizontal mobile scrolling; home and OCR share one tile so the fourteen pictures have exactly fourteen entries.

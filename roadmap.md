@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Apply selected kinetic panel expansion across the introduction, fourteen feature tiles, downloads, installation and footer; preserve colors, typography, original pictures and automatic reduced motion.
 - [x] Add Bengali/English reading and professional English typography; verified all fourteen translated features, FAQs, language persistence, 320–1280px widths, no browser errors and clean build.
 - [ ] Host Li Noirrit Bengali — awaits permission from Lipighor for web font distribution; currently uses installed Noirrit when available and a bundled open-license Bengali fallback.
 - [x] Show the fourteen real features once and remove the repeated carousel and reading-tools section; verified fourteen loaded pictures, fourteen individually animated scenes, mobile scrolling, Features navigation, FAQ, 320–1920px widths, automatic reduced motion, routing test and clean build.
