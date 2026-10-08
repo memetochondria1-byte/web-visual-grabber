@@ -12,7 +12,7 @@
 - APK download URL and release info live only in src/config/app.ts (APP_CONFIG) — one place to update per release.
 - Everything the site shows is served from this repository: app pictures and the Protiva logo/QR are imported from src/assets/ and the site icon is public/favicon.png, so no page depends on an outside host.
 - The screenshot feature tour keeps each image and its details together in one ordered collection in ScreenshotGallery.tsx, so scroll navigation and copy cannot drift apart.
-- The feature tour renders one full-width chapter per entry, with centered details above one original screenshot, so no viewport pairs pictures.
+- The feature tour renders one chapter per entry with one screenshot left and its details right on wide screens, stacking on narrow screens without pairing pictures.
 - Display and body fonts are loaded from local font packages through the global stylesheet, so typography does not depend on external font hosts.
 
 - The download page renders a sequential screenshot feature tour rather than loading the unused WebGL showcase, keeping picture inspection direct and lightweight.

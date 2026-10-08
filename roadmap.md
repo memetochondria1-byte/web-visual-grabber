@@ -1,5 +1,5 @@
 # Tasks
-- [ ] Restore one-picture-at-a-time feature presentation and add a selected unique animation; awaiting animation direction.
+- [ ] Show one picture per feature with its text beside it on wide screens, retain narrative animation and verify all fourteen chapters.
 - [x] Restyle Protiva with video-inspired paired features and selected typography; preserved original light/amber colors and verified fourteen images, navigation, narrow layout and routing test.
 - [x] Replace floating 3D pictures and carousel with fourteen detailed sequential scroll features and restrained animation; verified all images, navigation, small-screen layout and reduced motion.
 - [x] Add all nine uploaded pictures to the download page.
