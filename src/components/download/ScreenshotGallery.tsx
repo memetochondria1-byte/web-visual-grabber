@@ -76,6 +76,26 @@ const explanationCards = [
     title: "Share Conversations",
     description: "Share useful Nova conversations with others using a link or QR code.",
   },
+  {
+    title: "Bangla Explanations",
+    description: "Read page explanations in Bangla, right beside your PDF.",
+  },
+  {
+    title: "Document Context",
+    description: "Nova can use the whole document while you keep working in page mode.",
+  },
+  {
+    title: "Simpler Explanations",
+    description: "Ask Nova to explain a hard page in simpler words you understand.",
+  },
+  {
+    title: "Export Your Work",
+    description: "Keep highlights, drawings, and notes together and take them anywhere.",
+  },
+  {
+    title: "More Study Tools",
+    description: "Discover reading, annotation, and study tools in one place.",
+  },
 ];
 
 export function ScreenshotGallery() {
