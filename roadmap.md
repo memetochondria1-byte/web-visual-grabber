@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Replace generic slogans and unsupported claims throughout the served page with plain, feature-specific copy; verify page and feature navigation.
 - [x] Apply selected premium editorial desktop bento with large original app image and document-line motion; verified 390–1440px layouts, image loading, tour navigation, reduced motion, unchanged mobile, routing test and clean build.
 - [x] Apply selected compact mobile editorial layout with real app picture, visible feature images and reduced-motion-safe motion graphics; verified 320–1280px layouts, overview swipe, detailed tour navigation, reduced motion, routing test and clean build.
 - [x] Add reference-inspired bento overview using only real Protiva features and original app pictures; verified five tiles, loaded pictures, narrow layout, preserved tour navigation, routing test and clean build.

@@ -16,13 +16,13 @@ export function PremiumHero() {
   return (
     <section aria-label="Protiva AI for Android" className="premium-intro mx-auto max-w-6xl border-x px-5 sm:px-10">
       <div className="premium-meta flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-        <span className="flex items-center gap-3"><span className="h-2 w-2 bg-accent" aria-hidden="true" />MOBILE STUDY WORKSPACE</span>
+        <span className="flex items-center gap-3"><span className="h-2 w-2 bg-accent" aria-hidden="true" />PDF READER & STUDY TOOLS</span>
         <span className="hidden h-px flex-1 bg-border sm:block" aria-hidden="true" />
         <span>PROTIVA / ANDROID</span>
       </div>
       <h1 className="premium-title font-semibold">
         <span className="premium-title-mask"><span>Protiva AI,</span></span>
-        <span className="premium-title-mask"><span className="premium-title-accent text-accent">now on Android.</span></span>
+        <span className="premium-title-mask"><span className="premium-title-accent text-accent">for Android.</span></span>
       </h1>
       <div className="mobile-product-stage">
         <svg className="mobile-motion-lines" viewBox="0 0 350 190" fill="none" aria-hidden="true">
@@ -35,12 +35,12 @@ export function PremiumHero() {
       </div>
       <div className="premium-support-grid">
         <div className="premium-support">
-          <p className="text-lg leading-relaxed text-muted-foreground">Your PDFs. Your notes. Your AI study workspace. Read, annotate, and understand your documents anywhere.</p>
+          <p className="text-lg leading-relaxed text-muted-foreground">Read and annotate PDFs, ask Nova questions about a page, and get explanations in Bangla.</p>
           <div className="mt-6 grid grid-cols-2 gap-3" aria-label="App stores">
-            <Button disabled className="store-entry" aria-label="App Store — Coming soon"><AppleMark /><span className="store-badge-copy"><span className="store-badge-kicker">Download on the</span><span className="store-badge-name">App Store</span></span></Button>
-            <Button disabled className="store-entry" aria-label="Google Play — Coming soon"><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>
+            <Button disabled className="store-entry" aria-label="App Store — Link not available"><AppleMark /><span className="store-badge-copy"><span className="store-badge-kicker">Download on the</span><span className="store-badge-name">App Store</span></span></Button>
+            <Button disabled className="store-entry" aria-label="Google Play — Link not available"><PlayMark /><span className="store-badge-copy"><span className="store-badge-kicker">GET IT ON</span><span className="store-badge-name">Google Play</span></span></Button>
           </div>
-          <p className="mt-2 text-xs text-muted-foreground">App Store & Google Play · Coming soon</p>
+          <p className="mt-2 text-xs text-muted-foreground">App Store and Google Play links are not available yet.</p>
           <div className="premium-actions mt-4 flex flex-wrap gap-3">
             <DownloadButton className="flex-1 whitespace-nowrap px-4 sm:flex-none" />
             <Button asChild variant="outline" className="h-12 flex-1 px-5 sm:flex-none"><a href={LINKS.webApp}>Open Web App <ArrowUpRight aria-hidden="true" /></a></Button>
