@@ -9,6 +9,7 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { LanguageProvider } from "@/components/download/Language";
 
 import appCss from "../styles.css?url";
 import { reportClientError } from "../lib/client-error-reporting";
@@ -117,7 +118,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <LanguageProvider><Outlet /></LanguageProvider>
     </QueryClientProvider>
   );
 }
