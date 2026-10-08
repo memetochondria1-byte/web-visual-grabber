@@ -479,6 +479,32 @@ details[open] .faq-body { grid-template-rows: 1fr; }
   .download-document-graphic { height: 150px; }
 }
 
+html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-motion="reduced"] *::after {
+  animation: none !important;
+  transition-duration: 150ms !important;
+  transition-delay: 0ms !important;
+  scroll-behavior: auto !important;
+}
+html[data-motion="off"] *, html[data-motion="off"] *::before, html[data-motion="off"] *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+html[data-motion="reduced"] .mobile-motion-lines path,
+html[data-motion="off"] .mobile-motion-lines path,
+html[data-motion="reduced"] .graphic-stroke,
+html[data-motion="off"] .graphic-stroke,
+html[data-motion="reduced"] .graphic-connector,
+html[data-motion="off"] .graphic-connector,
+html[data-motion="reduced"] .room-orbit path,
+html[data-motion="off"] .room-orbit path { stroke-dashoffset: 0 !important; }
+html[data-motion="reduced"] [data-reveal], html[data-motion="off"] [data-reveal],
+html[data-motion="reduced"] [data-reveal] > *, html[data-motion="off"] [data-reveal] > * {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mobile-motion-lines path { stroke-dashoffset: 0; }
   .narrative-reveal[data-reveal="pending"] > * { opacity: 1; transform: none; clip-path: none; }

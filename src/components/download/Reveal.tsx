@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useMotionPreference } from "./MotionPreference";
 
 /** Fades content up as it scrolls into view. Content stays visible without JS. */
 export function Reveal({
@@ -16,11 +17,12 @@ export function Reveal({
 }) {
   const ref = useRef<HTMLElement>(null);
   const [shown, setShown] = useState(true);
+  const motion = useMotionPreference();
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (motion !== "full") { setShown(true); return; }
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight * 0.95) return; // already on screen
     setShown(false);
@@ -35,7 +37,7 @@ export function Reveal({
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [motion]);
 
   return (
     <Tag
