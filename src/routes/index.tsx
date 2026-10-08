@@ -7,6 +7,7 @@ import { DownloadButton } from "@/components/download/DownloadButton";
 import { Reveal } from "@/components/download/Reveal";
 import { ScreenshotGallery } from "@/components/download/ScreenshotGallery";
 import { Logo } from "@/components/download/Logo";
+import { BentoHero } from "@/components/download/BentoHero";
 
 const TITLE = "Download Protiva AI for Android | Protiva";
 const DESC =
@@ -72,34 +73,7 @@ function DownloadPage() {
     <div className="min-h-screen">
       <Navbar />
       <main>
-        {/* HERO */}
-        <section className="mx-auto max-w-6xl px-5 pt-14 pb-16 text-center sm:pt-24">
-          <h1 className="animate-fade-up mx-auto mt-6 max-w-3xl text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.035em] [animation-delay:80ms] sm:text-7xl">
-            Protiva AI, <span className="text-accent">now on Android.</span>
-          </h1>
-          <p className="animate-fade-up mx-auto mt-6 max-w-xl text-lg text-foreground/80 [animation-delay:160ms] sm:text-xl">
-            Your PDFs. Your notes. Your AI study workspace.
-          </p>
-          <p className="animate-fade-up mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-muted-foreground [animation-delay:200ms]">
-            Read, annotate, study and understand your documents with Protiva AI. Download the official Android app and take your workspace with you.
-          </p>
-          <div className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-3 [animation-delay:260ms] sm:flex-row">
-            <DownloadButton className="w-full sm:w-auto" />
-            <a
-              href={LINKS.webApp}
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg border bg-card px-6 text-[15px] font-medium transition-colors hover:bg-muted sm:w-auto"
-            >
-              Open Web App <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </a>
-          </div>
-          <p className="animate-fade-up mt-4 font-mono text-xs text-muted-foreground [animation-delay:300ms]">
-            Android · APK · Official Protiva release
-          </p>
-          <p className="animate-fade-up mt-1.5 text-xs text-muted-foreground [animation-delay:320ms]">
-            Official Protiva AI app · Direct download · No third-party mirror
-          </p>
-
-        </section>
+        <BentoHero />
 
         <ScreenshotGallery />
 

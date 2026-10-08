@@ -18,3 +18,4 @@
 - The download page renders a sequential screenshot feature tour rather than loading the unused WebGL showcase, keeping picture inspection direct and lightweight.
 - Scroll fade-ins use `src/components/download/Reveal.tsx`; content stays visible if scripting is unavailable.
 - Feature chapters use Reveal's narrative variant for staggered text and masked image entry; reduced-motion visitors receive immediately visible content.
+- The bento introduction lives in BentoHero and uses CSS perspective on document layers, not WebGL or animated app screenshots, keeping the entry lightweight and the supplied images readable.

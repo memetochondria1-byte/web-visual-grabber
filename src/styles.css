@@ -97,6 +97,44 @@
 @utility animate-float { animation: float-y 7s ease-in-out infinite; }
 
 details summary::-webkit-details-marker { display: none; }
+.bento-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; }
+.bento-masthead { grid-column: span 8; padding: 28px 32px 32px 0; align-self: center; }
+.bento-tile { position: relative; min-width: 0; overflow: hidden; border-radius: var(--radius); padding: 28px; }
+.bento-mobile { grid-column: span 4; min-height: 510px; }
+.bento-workflow { grid-column: span 7; min-height: 330px; }
+.bento-annotation { grid-column: span 5; }
+.bento-screen-stage { position: relative; width: 192px; margin: 26px auto 34px; perspective: 1000px; }
+.bento-app-picture { display: block; position: relative; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-device); }
+.bento-screen-edge { position: absolute; inset: 7px -9px -7px 9px; border: 1px solid var(--border); background: var(--card); border-radius: var(--radius); animation: edge-arrive 1.4s var(--ease-out) both; }
+.bento-corner-index { position: absolute; bottom: 18px; left: 28px; }
+.workflow-depth { position: relative; margin-top: 32px; height: 140px; perspective: 1000px; }
+.workflow-layer { position: absolute; inset: 0; border: 1px solid color-mix(in oklch, var(--primary-foreground) 15%, transparent); border-radius: var(--radius); background: color-mix(in oklch, var(--accent) 12%, var(--primary)); }
+.workflow-layer-back { transform: translate3d(10px, 15px, -45px); }
+.workflow-layer-middle { transform: translate3d(5px, 8px, -20px); }
+.workflow-page { position: relative; height: 100%; padding: 18px; border: 1px solid color-mix(in oklch, var(--primary-foreground) 22%, transparent); border-radius: var(--radius); background: color-mix(in oklch, var(--primary-foreground) 7%, var(--primary)); transform-origin: bottom center; }
+.document-line { height: 5px; flex: 1; background: color-mix(in oklch, var(--primary-foreground) 22%, transparent); border-radius: 2px; }
+.bento-workflow[data-reveal="shown"] .workflow-page { animation: page-unfold 1.3s var(--ease-out) both; }
+.bento-workflow[data-reveal="shown"] .workflow-layer-middle { animation: layer-settle 1.4s var(--ease-out) both; }
+@keyframes page-unfold { from { opacity: 0; transform: rotateX(22deg) translate3d(0, 28px, -50px); } to { opacity: 1; transform: rotateX(0) translate3d(0,0,0); } }
+@keyframes layer-settle { from { opacity: 0; transform: translate3d(5px, 24px, -50px); } to { opacity: 1; transform: translate3d(5px, 8px, -20px); } }
+@keyframes edge-arrive { from { opacity: 0; transform: translate3d(0, 20px, -30px); } to { opacity: 1; transform: translate3d(0,0,0); } }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .workflow-page { transition: transform .65s var(--ease-out); }
+  .bento-workflow:hover .workflow-page { transform: translate3d(0,-4px,12px); }
+}
+@media (max-width: 1023px) {
+  .bento-masthead { grid-column: span 7; padding-right: 10px; }
+  .bento-mobile { grid-column: span 5; }
+}
+@media (max-width: 767px) {
+  .bento-grid { grid-template-columns: minmax(0,1fr); gap: 16px; }
+  .bento-masthead, .bento-mobile, .bento-workflow, .bento-annotation { grid-column: 1; }
+  .bento-masthead { padding: 8px 0 18px; }
+  .bento-mobile { min-height: 490px; }
+  .bento-tile { padding: 24px; }
+  .workflow-page { padding: 16px 12px; }
+  .workflow-page > div:last-child { gap: 8px; font-size: 10px; }
+}
 .narrative-heading, .narrative-detail, .narrative-points, .narrative-picture {
   opacity: 1;
   transform: none;
