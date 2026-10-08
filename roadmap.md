@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Repair the cramped phone composition, remove repetitive website copy in both languages, and add richer touch-responsive decorative graphics across the existing page.
 - [x] Apply selected kinetic panel expansion across the introduction, fourteen feature tiles, downloads, installation and footer; verified all fourteen loaded pictures, desktop/mobile entrances, Bengali switch, FAQ, 320–1920px widths, paused offscreen motion, reduced motion, routing test and clean build.
 - [x] Add Bengali/English reading and professional English typography; verified all fourteen translated features, FAQs, language persistence, 320–1280px widths, no browser errors and clean build.
 - [ ] Host Li Noirrit Bengali — awaits permission from Lipighor for web font distribution; currently uses installed Noirrit when available and a bundled open-license Bengali fallback.
